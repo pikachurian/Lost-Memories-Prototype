@@ -2,6 +2,7 @@ startX = x;
 startY = y;
 faceUp = true;
 alpha = 0;
+image_speed = 0;
 
 function Show()
 {
