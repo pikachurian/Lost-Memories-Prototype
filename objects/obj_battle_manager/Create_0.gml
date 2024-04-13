@@ -64,7 +64,14 @@ makeGuessButtonY = room_height * 0.6;//room_height / 2;//room_height -120;
 showSymbolRateTime = 0.5 * game_get_speed(gamespeed_fps);
 showSymbolRateTick = 0;
 symbolsShown = 0;
+correctGuesses = 0;
 
+resultTextX = room_width * 0.5;
+resultTextY = room_height * 0.5;
+
+//The percent, 0 to 1 so not technically percent, of guesses the player needs 
+//to get correct to win a turn.
+guessPercentToWin = 0.6;
 
 
 function ChangeState(_state)
@@ -82,6 +89,7 @@ function ChangeState(_state)
 		case BS.checkGuess:
 			showSymbolRateTick = 0;
 			symbolsShown = 0;
+			correctGuesses = 0;
 			break;
 	}
 	
@@ -133,7 +141,8 @@ function SpawnSequence()
 	for(var _i = 0; _i < array_length(sequence); _i ++)
 	{
 		var _inst = instance_create_depth(sequenceX + (_i * sequenceHOffset), sequenceY, depth, obj_symbol);
-		_inst.image_index = sequence[_i];
+		//_inst.image_index = sequence[_i];
+		_inst.SetSymbolIndex(sequence[_i]);
 		ds_list_add(sequenceList, _inst);
 	}
 }

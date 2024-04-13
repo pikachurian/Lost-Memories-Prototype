@@ -9,5 +9,7 @@ if(canEdit)
 		image_index += 1;
 		if(image_index >= image_number)
 			image_index = 0;
+			
+		SetSymbolIndex(image_index);
 	}
 }

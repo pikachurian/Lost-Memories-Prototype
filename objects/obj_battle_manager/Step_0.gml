@@ -36,10 +36,29 @@ switch(state)
 			showSymbolRateTick = 0;
 			if(symbolsShown >= ds_list_size(sequenceList))
 			{
+				var _resultTextInst = instance_create_depth(resultTextX, resultTextY, depth - 10, obj_result_text);
 				//Change state.
+				if(correctGuesses / ds_list_size(sequenceList) >= guessPercentToWin)
+				{
+					//Win turn.
+					ChangeState(BS.restoreMoment);
+					_resultTextInst.SetText(RT.success);
+				}else
+				{
+					//Lose turn.
+					ChangeState(BS.chooseAction);
+					_resultTextInst.SetText(RT.failure);
+				}
 			}else
 			{
 				sequenceList[|symbolsShown].Show();
+				
+				//Check if player's guess is corret for this symbol.
+				if(guessList[|symbolsShown].symbolIndex == sequenceList[|symbolsShown].symbolIndex)
+				{
+					correctGuesses += 1;
+				}
+				
 				symbolsShown += 1;
 			}
 		}else showSymbolRateTick += 1;
