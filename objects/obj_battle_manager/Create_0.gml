@@ -16,7 +16,7 @@ enum BS
 	chooseAction,
 	showSequence,
 	guess,
-	showGuess,
+	checkGuess,
 	restoreMoment
 }
 
@@ -58,7 +58,14 @@ hp = enemy.hp;
 //Buttons.
 makeGuessButton = noone;
 makeGuessButtonX = room_width * 0.3;//room_width / 2;//room_width / 2;
-makeGuessButtonY = room_height * 0.6//room_height / 2;//room_height -120;
+makeGuessButtonY = room_height * 0.6;//room_height / 2;//room_height -120;
+
+//Show sequence and check guess state variables.
+showSymbolRateTime = 0.5 * game_get_speed(gamespeed_fps);
+showSymbolRateTick = 0;
+symbolsShown = 0;
+
+
 
 function ChangeState(_state)
 {
@@ -70,6 +77,11 @@ function ChangeState(_state)
 				instance_destroy(makeGuessButton);
 				
 			makeGuessButton = noone;
+			break;
+			
+		case BS.checkGuess:
+			showSymbolRateTick = 0;
+			symbolsShown = 0;
 			break;
 	}
 	

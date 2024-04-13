@@ -18,6 +18,7 @@
     {"name":"Symbols","order":1,"path":"folders/Sprites/Symbols.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Battle","order":6,"path":"folders/Sprites/Battle.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_symbol_guess","order":2,"path":"objects/obj_symbol_guess/obj_symbol_guess.yy",},
@@ -30,6 +31,7 @@
     {"name":"obj_textbox_closing","order":7,"path":"objects/obj_textbox_closing/obj_textbox_closing.yy",},
     {"name":"obj_symbol","order":1,"path":"objects/obj_symbol/obj_symbol.yy",},
     {"name":"spr_make_guess","order":2,"path":"sprites/spr_make_guess/spr_make_guess.yy",},
+    {"name":"obj_result_text","order":4,"path":"objects/obj_result_text/obj_result_text.yy",},
     {"name":"spr_hidden4","order":2,"path":"sprites/spr_hidden4/spr_hidden4.yy",},
     {"name":"obj_inventory","order":5,"path":"objects/obj_inventory/obj_inventory.yy",},
     {"name":"obj_fade","order":1,"path":"objects/obj_fade/obj_fade.yy",},

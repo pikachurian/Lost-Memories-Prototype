@@ -26,7 +26,22 @@ switch(state)
 		{
 			with(obj_symbol_guess)
 				canEdit = false;
-			ChangeState(BS.showGuess);
+			ChangeState(BS.checkGuess);
 		}
+		break;
+		
+	case BS.checkGuess:
+		if(showSymbolRateTick >= showSymbolRateTime)
+		{
+			showSymbolRateTick = 0;
+			if(symbolsShown >= ds_list_size(sequenceList))
+			{
+				//Change state.
+			}else
+			{
+				sequenceList[|symbolsShown].Show();
+				symbolsShown += 1;
+			}
+		}else showSymbolRateTick += 1;
 		break;
 }
