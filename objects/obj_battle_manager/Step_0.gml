@@ -1,6 +1,9 @@
 switch(state)
 {
 	case BS.setup: 
+		enemyInst = instance_create_depth(enemy.x, enemy.y, depth, obj_battle_enemy);
+		enemyInst.momentSprite = enemy.momentSprite;
+		enemyInst.momentShadowSprite = enemy.momentShadowSprite;
 		ChangeState(BS.showSequence);
 		break;
 		

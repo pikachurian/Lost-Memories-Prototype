@@ -1,6 +1,10 @@
 enemy = {
 	hp : 4,
-	sequenceLength : 3
+	sequenceLength : 3,
+	momentSprite : spr_moment_beta,
+	momentShadowSprite : spr_moment_shadow_beta,
+	x : room_width * 0.5,
+	y : room_width * 0.15
 }
 
 sequence = array_create(enemy.sequenceLength);
@@ -12,7 +16,8 @@ enum BS
 	chooseAction,
 	showSequence,
 	guess,
-	showGuess
+	showGuess,
+	restoreMoment
 }
 
 //Symbol
@@ -35,8 +40,8 @@ showTime = 2 * timePerGuess;
 showTick = 0;
 
 //Sequence stuff.
-sequenceX = room_width / 2;
-sequenceY = room_height / 2;
+sequenceX = room_width * 0.5;//room_width / 2;
+sequenceY = room_height * 0.6;//room_height / 2;
 sequenceHOffset = 16;
 sequenceList = ds_list_create();
 
@@ -47,12 +52,14 @@ guessHOffset = 16;
 guessList = ds_list_create();
 
 //Enemy stats.
+enemyInst = noone;
 hp = enemy.hp;
 
 //Buttons.
 makeGuessButton = noone;
-makeGuessButtonX = room_width / 2;
-makeGuessButtonY = room_height -120;
+makeGuessButtonX = room_width * 0.3;//room_width / 2;//room_width / 2;
+makeGuessButtonY = room_height * 0.6//room_height / 2;//room_height -120;
+
 function ChangeState(_state)
 {
 	//Actions for leaving a state.
