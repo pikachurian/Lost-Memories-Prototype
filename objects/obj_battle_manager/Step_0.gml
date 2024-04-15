@@ -13,13 +13,47 @@ switch(state)
 		//Choose to remember.
 		if(GetInput(INPUT.clicked, rememberButton))
 		{
-			ChangeState(BS.showSequence);
+			ChangeState(BS.chooseMemoryToSpend);
 		}
 		
 		//Choose to move on.
 		if(GetInput(INPUT.clicked, rememberButton))
 		{
 			ChangeState(BS.moveOn);
+		}
+		break;
+		
+	case BS.chooseMemoryToSpend:
+		//Choose to spend more memory for more time.
+		if(GetInput(INPUT.clicked, addButton))
+		{
+			if(guesses < guessMax)
+			{
+				guesses += 1;
+				addButton.scale = 0.5;
+				
+				subtractButton.image_alpha = 1;
+				if(guesses >= guessMax)
+					addButton.image_alpha = cannotSelectAlpha;
+				else
+					addButton.image_alpha = 1;
+			}
+		}
+		
+		//Choose to spend less memory for less time.
+		if(GetInput(INPUT.clicked, subtractButton))
+		{
+			if(guesses > guessMin)
+			{
+				guesses -= 1;
+				subtractButton.scale = 0.5;
+				
+				addButton.image_alpha = 1;
+				if(guesses <= guessMin)
+					subtractButton.image_alpha = cannotSelectAlpha;
+				else
+					subtractButton.image_alpha = 1;
+			}
 		}
 		break;
 		

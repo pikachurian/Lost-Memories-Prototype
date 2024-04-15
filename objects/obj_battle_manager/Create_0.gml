@@ -36,7 +36,9 @@ state = BS.setup;
 //Memory stuff.
 guessCost = 5;
 timePerGuess = 1 * game_get_speed(gamespeed_fps);
+guessMin = 1;
 guessMax = 10;
+guesses = 1;
 
 showTime = 2 * timePerGuess;
 showTick = 0;
@@ -73,7 +75,7 @@ moveOnButtonY = rememberButtonY + 32;
 moveOnButtonSprite = spr_move_on;
 
 addButton = noone;
-addButtonX = room_width * 0.1;
+addButtonX = room_width * 0.9;
 addButtonY = room_height * 0.5;
 addButtonSprite = spr_add;
 
@@ -81,6 +83,9 @@ subtractButton = noone;
 subtractButtonX = room_width * 0.1;
 subtractButtonY = room_height * 0.5;
 subtractButtonSprite = spr_subtract;
+
+//The alpha of a button when it is not selectable.
+cannotSelectAlpha = 0.5;
 
 //Show sequence and check guess state variables.
 showSymbolRateTime = 0.5 * game_get_speed(gamespeed_fps);
@@ -109,7 +114,13 @@ function ChangeState(_state)
 				instance_destroy(moveOnButton);
 			break;
 			
-		//case BS.chooseMemoryToSpend
+		case BS.chooseMemoryToSpend:
+			if(addButton != noone)
+				instance_destroy(addButton);
+				
+			if(subtractButton != noone)
+				instance_destroy(subtractButton);
+			break;
 		
 		case BS.guess:
 			if(makeGuessButton != noone)
@@ -138,6 +149,15 @@ function ChangeState(_state)
 			
 			moveOnButton = instance_create_depth(moveOnButtonX, moveOnButtonY, depth, obj_button);
 			moveOnButton.sprite_index = moveOnButtonSprite;
+			break;
+			
+		case BS.chooseMemoryToSpend:
+			addButton = instance_create_depth(addButtonX, addButtonY, depth, obj_button);
+			addButton.sprite_index = addButtonSprite;
+			
+			subtractButton = instance_create_depth(subtractButtonX, subtractButtonY, depth, obj_button);
+			subtractButton.sprite_index = subtractButtonSprite;
+			subtractButton.image_alpha = cannotSelectAlpha;
 			break;
 		
 		case BS.showSequence:
