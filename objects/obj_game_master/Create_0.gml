@@ -35,11 +35,20 @@ met_voice = false;
 has_fish = false;
 
 //Memory
+memoryMin = 0;
+memoryMax = 1000;
 memory = 100;
 
 //Parallax.
 backgroundXScale = 1.15;//1.25;
 backgroundYScale = 1.15;//1.25;
+
+function SetMemory(_amount)
+{
+	memory = _amount
+	memory = clamp(memory, memoryMin, memoryMax);
+	obj_memory_visual.UpdateVisual(memory);
+}
 
 function ChangeRoom(_roomString)
 {

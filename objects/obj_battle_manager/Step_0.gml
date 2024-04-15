@@ -24,9 +24,14 @@ switch(state)
 		break;
 		
 	case BS.chooseMemoryToSpend:
-		//Choose to spend more memory for more time.
-		if(GetInput(INPUT.clicked, addButton))
+	
+		if(GetInput(INPUT.clicked, toMainButton))
 		{
+			//Return to the action select menu.
+			ChangeState(BS.chooseAction);
+		}else if(GetInput(INPUT.clicked, addButton))
+		{
+			//Choose to spend more memory for more time.
 			if(guesses < guessMax) && (obj_game_master.memory >= (guesses + 1) * guessCost)
 			{
 				guesses += 1;
@@ -38,11 +43,9 @@ switch(state)
 			{
 				addButton.image_alpha = cannotSelectAlpha;
 			}
-		}
-		
-		//Choose to spend less memory for less time.
-		if(GetInput(INPUT.clicked, subtractButton))
+		}else if(GetInput(INPUT.clicked, subtractButton))
 		{
+			//Choose to spend less memory for less time.
 			if(guesses > guessMin)
 			{
 				guesses -= 1;
@@ -54,6 +57,12 @@ switch(state)
 			{
 				subtractButton.image_alpha = cannotSelectAlpha;
 			}
+		}else if(GetInput(INPUT.clicked, confirmCostButton))
+		{
+			//Confirm cost and go to show sequence.
+			obj_game_master.SetMemory(obj_game_master.memory - guesses * guessCost); 
+			showTime = guesses * timePerGuess;
+			ChangeState(BS.showSequence);
 		}
 		break;
 		

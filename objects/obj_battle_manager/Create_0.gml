@@ -84,6 +84,17 @@ subtractButtonX = room_width * 0.1;
 subtractButtonY = room_height * 0.5;
 subtractButtonSprite = spr_subtract;
 
+confirmCostButton = noone;
+confirmCostButtonX = room_width * 0.7;
+confirmCostButtonY = room_height * 0.8;
+confirmCostButtonSprite = spr_confirm;
+
+//Returns to the action select menu.
+toMainButton = noone;
+toMainButtonX = room_width * 0.3;
+toMainButtonY = room_height * 0.8;
+toMainButtonSprite = spr_back;
+
 //The alpha of a button when it is not selectable.
 cannotSelectAlpha = 0.5;
 
@@ -120,6 +131,12 @@ function ChangeState(_state)
 				
 			if(subtractButton != noone)
 				instance_destroy(subtractButton);
+				
+			if(confirmCostButton != noone)
+				instance_destroy(confirmCostButton);
+				
+			if(toMainButton != noone)
+				instance_destroy(toMainButton);
 			break;
 		
 		case BS.guess:
@@ -161,6 +178,12 @@ function ChangeState(_state)
 			subtractButton = instance_create_depth(subtractButtonX, subtractButtonY, depth, obj_button);
 			subtractButton.sprite_index = subtractButtonSprite;
 			subtractButton.image_alpha = cannotSelectAlpha;
+			
+			toMainButton = instance_create_depth(toMainButtonX, toMainButtonY, depth, obj_button);
+			toMainButton.sprite_index = toMainButtonSprite;
+			
+			confirmCostButton = instance_create_depth(confirmCostButtonX, confirmCostButtonY, depth, obj_button);
+			confirmCostButton.sprite_index = confirmCostButtonSprite;
 			break;
 		
 		case BS.showSequence:
