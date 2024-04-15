@@ -19,7 +19,9 @@ enum BS
 	checkGuess,
 	restoreMoment,
 	chooseMemoryToSpend,
-	moveOn
+	moveOn,
+	remember,
+	leaveBattle
 }
 
 //Symbol
@@ -192,6 +194,8 @@ function ChangeState(_state)
 				//
 			}*/
 			showTick = 0;
+			
+			CreateSequenceArray(enemy.sequenceLength);
 			if(ds_list_empty(sequenceList))
 				SpawnSequence();
 					
@@ -287,4 +291,4 @@ function DeleteGuesses()
 	ds_list_clear(guessList);
 }
 
-CreateSequenceArray(enemy.sequenceLength);
+//CreateSequenceArray(enemy.sequenceLength);

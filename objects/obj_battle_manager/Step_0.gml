@@ -4,6 +4,8 @@ switch(state)
 		enemyInst = instance_create_depth(enemy.x, enemy.y, depth, obj_battle_enemy);
 		enemyInst.momentSprite = enemy.momentSprite;
 		enemyInst.momentShadowSprite = enemy.momentShadowSprite;
+		enemyInst.hpMax = enemy.hp;
+		enemyInst.hp = enemy.hp;
 		//ChangeState(BS.showSequence);
 		ChangeState(BS.chooseAction);
 		break;
@@ -100,7 +102,7 @@ switch(state)
 				if(correctGuesses / ds_list_size(sequenceList) >= guessPercentToWin)
 				{
 					//Win turn.
-					ChangeState(BS.chooseAction);
+					ChangeState(BS.restoreMoment);
 					_resultTextInst.SetText(RT.success);
 				}else
 				{
@@ -122,4 +124,13 @@ switch(state)
 			}
 		}else showSymbolRateTick += 1;
 		break;
+		
+		case BS.restoreMoment:
+			enemyInst.SetHP(enemyInst.hp - 1);
+			
+			if(enemyInst.hp <= 0)
+				ChangeState(BS.remember);
+			else
+				ChangeState(BS.chooseAction);
+			break;
 }

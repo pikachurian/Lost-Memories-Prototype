@@ -4,6 +4,8 @@ function Global(){
 
 }
 
+randomize();
+
 function CreateTextbox(_lines)
 {
 	obj_game_master.previousState = obj_game_master.state;
