@@ -144,8 +144,11 @@ function ChangeState(_state)
 	switch(_state)
 	{
 		case BS.chooseAction:
-			rememberButton = instance_create_depth(rememberButtonX, rememberButtonY, depth, obj_button);
-			rememberButton.sprite_index = rememberButtonSprite;
+			if(obj_game_master.memory >= guessCost)
+			{
+				rememberButton = instance_create_depth(rememberButtonX, rememberButtonY, depth, obj_button);
+				rememberButton.sprite_index = rememberButtonSprite;
+			}
 			
 			moveOnButton = instance_create_depth(moveOnButtonX, moveOnButtonY, depth, obj_button);
 			moveOnButton.sprite_index = moveOnButtonSprite;

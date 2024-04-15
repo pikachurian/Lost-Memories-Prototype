@@ -27,16 +27,16 @@ switch(state)
 		//Choose to spend more memory for more time.
 		if(GetInput(INPUT.clicked, addButton))
 		{
-			if(guesses < guessMax)
+			if(guesses < guessMax) && (obj_game_master.memory >= (guesses + 1) * guessCost)
 			{
 				guesses += 1;
 				addButton.scale = 0.5;
 				
 				subtractButton.image_alpha = 1;
-				if(guesses >= guessMax)
-					addButton.image_alpha = cannotSelectAlpha;
-				else
-					addButton.image_alpha = 1;
+				addButton.image_alpha = 1;
+			}else
+			{
+				addButton.image_alpha = cannotSelectAlpha;
 			}
 		}
 		
@@ -49,10 +49,10 @@ switch(state)
 				subtractButton.scale = 0.5;
 				
 				addButton.image_alpha = 1;
-				if(guesses <= guessMin)
-					subtractButton.image_alpha = cannotSelectAlpha;
-				else
-					subtractButton.image_alpha = 1;
+				subtractButton.image_alpha = 1;
+			}else
+			{
+				subtractButton.image_alpha = cannotSelectAlpha;
 			}
 		}
 		break;
