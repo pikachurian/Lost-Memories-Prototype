@@ -72,6 +72,16 @@ moveOnButtonX = room_width * 0.1;
 moveOnButtonY = rememberButtonY + 32;
 moveOnButtonSprite = spr_move_on;
 
+addButton = noone;
+addButtonX = room_width * 0.1;
+addButtonY = room_height * 0.5;
+addButtonSprite = spr_add;
+
+subtractButton = noone;
+subtractButtonX = room_width * 0.1;
+subtractButtonY = room_height * 0.5;
+subtractButtonSprite = spr_subtract;
+
 //Show sequence and check guess state variables.
 showSymbolRateTime = 0.5 * game_get_speed(gamespeed_fps);
 showSymbolRateTick = 0;
@@ -98,6 +108,8 @@ function ChangeState(_state)
 			if(moveOnButton != noone)
 				instance_destroy(moveOnButton);
 			break;
+			
+		//case BS.chooseMemoryToSpend
 		
 		case BS.guess:
 			if(makeGuessButton != noone)

@@ -47,6 +47,7 @@
     {"id":{"name":"fnt_pixel","path":"fonts/fnt_pixel/fnt_pixel.yy",},},
     {"id":{"name":"spr_remember","path":"sprites/spr_remember/spr_remember.yy",},},
     {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
+    {"id":{"name":"obj_memory_visual","path":"objects/obj_memory_visual/obj_memory_visual.yy",},},
     {"id":{"name":"spr_moment_beta","path":"sprites/spr_moment_beta/spr_moment_beta.yy",},},
     {"id":{"name":"Global","path":"scripts/Global/Global.yy",},},
     {"id":{"name":"obj_interactable","path":"objects/obj_interactable/obj_interactable.yy",},},
