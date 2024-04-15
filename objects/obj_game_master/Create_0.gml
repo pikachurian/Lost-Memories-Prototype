@@ -75,7 +75,7 @@ function ChangeRoom(_roomString)
 	obj_background.sprite_index = asset_get_index(_backgroundString);
 	
 	//Create interactables.
-	if(struct_exists(_roomStruct, "interactables"))
+	if(is_struct(gameData)) && (struct_exists(_roomStruct, "interactables"))
 	{
 		var _interactableNames = struct_get_names(_roomStruct.interactables);
 		for(var _i = 0; _i < array_length(_interactableNames); _i ++)
@@ -96,7 +96,7 @@ function ChangeRoom(_roomString)
 	}
 	
 	//Check the free_move struct variable to see if the player is paused.
-	if(struct_exists(_roomStruct, "free_move"))
+	if(is_struct(gameData)) && (struct_exists(_roomStruct, "free_move"))
 	{
 		if(_roomStruct.free_move == false)
 		{
@@ -116,7 +116,7 @@ function ChangeRoom(_roomString)
 	}
 	
 	//Create a textbox with lines.
-	if(struct_exists(_roomStruct, "lines"))
+	if(is_struct(gameData)) && 5(struct_exists(_roomStruct, "lines"))
 	{
 		CreateTextbox(_roomStruct.lines);
 	}

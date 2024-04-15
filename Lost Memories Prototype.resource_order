@@ -19,6 +19,8 @@
     {"name":"Symbols","order":1,"path":"folders/Sprites/Symbols.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Rooms","order":7,"path":"folders/Sprites/Rooms.yy",},
+    {"name":"Test","order":1,"path":"folders/Sprites/Rooms/Test.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_symbol_guess","order":2,"path":"objects/obj_symbol_guess/obj_symbol_guess.yy",},

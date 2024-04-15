@@ -19,7 +19,7 @@ switch(state)
 		}
 		
 		//Choose to move on.
-		if(GetInput(INPUT.clicked, rememberButton))
+		if(GetInput(INPUT.clicked, moveOnButton))
 		{
 			ChangeState(BS.moveOn);
 		}
@@ -132,5 +132,21 @@ switch(state)
 				ChangeState(BS.remember);
 			else
 				ChangeState(BS.chooseAction);
+			break;
+			
+		case BS.moveOn:
+			nextRoom = moveOnRoom;
+			ChangeState(BS.leaveBattle);
+			break;
+			
+		case BS.remember:
+			nextRoom = rememberRoom;
+			ChangeState(BS.leaveBattle);
+			break;
+			
+		case BS.leaveBattle:
+			obj_game_master.ChangeRoom(nextRoom);
+			instance_destroy(enemyInst);
+			instance_destroy();
 			break;
 }

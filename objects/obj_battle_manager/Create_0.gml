@@ -9,6 +9,15 @@ enemy = {
 
 sequence = array_create(enemy.sequenceLength);
 
+//The room to go to if the player moves on.
+moveOnRoom = "rm_test_room";
+
+//The room to go to if the player remembers.
+rememberRoom = "rm_test_room";
+
+//The room to go to after the battle.
+nextRoom = moveOnRoom;
+
 //Battle State.
 enum BS 
 {
