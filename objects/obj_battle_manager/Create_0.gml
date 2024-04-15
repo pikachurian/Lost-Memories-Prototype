@@ -17,7 +17,9 @@ enum BS
 	showSequence,
 	guess,
 	checkGuess,
-	restoreMoment
+	restoreMoment,
+	chooseMemoryToSpend,
+	moveOn
 }
 
 //Symbol
@@ -60,6 +62,16 @@ makeGuessButton = noone;
 makeGuessButtonX = room_width * 0.3;//room_width / 2;//room_width / 2;
 makeGuessButtonY = room_height * 0.6;//room_height / 2;//room_height -120;
 
+rememberButton = noone;
+rememberButtonX = room_width * 0.1;
+rememberButtonY = room_height * 0.3;
+rememberButtonSprite = spr_remember;
+
+moveOnButton = noone;
+moveOnButtonX = room_width * 0.1;
+moveOnButtonY = rememberButtonY + 32;
+moveOnButtonSprite = spr_move_on;
+
 //Show sequence and check guess state variables.
 showSymbolRateTime = 0.5 * game_get_speed(gamespeed_fps);
 showSymbolRateTick = 0;
@@ -79,6 +91,14 @@ function ChangeState(_state)
 	//Actions for leaving a state.
 	switch(state)
 	{
+		case BS.chooseAction:
+			if(rememberButton != noone)
+				instance_destroy(rememberButton);
+				
+			if(moveOnButton != noone)
+				instance_destroy(moveOnButton);
+			break;
+		
 		case BS.guess:
 			if(makeGuessButton != noone)
 				instance_destroy(makeGuessButton);
@@ -90,12 +110,24 @@ function ChangeState(_state)
 			showSymbolRateTick = 0;
 			symbolsShown = 0;
 			correctGuesses = 0;
+			
+			//Clear sequence and guesses.
+			ClearListOfInstances(sequenceList);
+			ClearListOfInstances(guessList);
 			break;
 	}
 	
 	//Actions for entering a state.
 	switch(_state)
 	{
+		case BS.chooseAction:
+			rememberButton = instance_create_depth(rememberButtonX, rememberButtonY, depth, obj_button);
+			rememberButton.sprite_index = rememberButtonSprite;
+			
+			moveOnButton = instance_create_depth(moveOnButtonX, moveOnButtonY, depth, obj_button);
+			moveOnButton.sprite_index = moveOnButtonSprite;
+			break;
+		
 		case BS.showSequence:
 			/*for(var _i = 0; _i < array_length(enemy.sequenceLength); _i ++)
 			{
@@ -130,7 +162,8 @@ function CreateSequenceArray(_length)
 	}
 }
 
-//Spawn a series of symbols and add them to sequenceList.
+//Spawn a series of symbols, according to the sequence array,
+//and add them to sequenceList.
 function SpawnSequence()
 {
 	if(array_length(sequence) <= 0)

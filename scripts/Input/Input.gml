@@ -11,7 +11,7 @@ enum INPUT
 	mousePressed
 }
 
-function GetInput(_inputEnum)
+function GetInput(_inputEnum, _inst = id)
 {
 	switch(_inputEnum)
 	{
@@ -20,11 +20,11 @@ function GetInput(_inputEnum)
 			break;
 			
 		case INPUT.mouseOver:
-			return position_meeting(mouse_x, mouse_y, id);
+			return position_meeting(mouse_x, mouse_y, _inst);
 			break;
 			
 		case INPUT.clicked:
-			if(GetInput(INPUT.mouseOver)) && (GetInput(INPUT.mousePressed))
+			if(GetInput(INPUT.mouseOver, _inst)) && (GetInput(INPUT.mousePressed, _inst))
 				return true;
 			return false
 			break;

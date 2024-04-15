@@ -11,6 +11,19 @@ function CreateTextbox(_lines)
 	var _textbox = instance_create_layer(0, 120, "Textbox", obj_textbox);//instance_create_layer(0, 96, "Textbox", obj_textbox_opening);//instance_create_layer(0, 96, "Textbox", obj_textbox);
 	_textbox.lines = _lines;
 }
+
+//Clears a ds list and destroys all instances in that list.
+function ClearListOfInstances(_list)
+{
+	var _listSize = ds_list_size(_list);
+	for(var _i = 0; _i < _listSize; _i ++)
+	{
+		if(instance_exists(_list[|0]))
+			instance_destroy(_list[|0]);
+			
+		ds_list_delete(_list, 0);
+	}
+}
 	
 /*This code was for testing the game before I added JSON loading.
 global.gameData = {
