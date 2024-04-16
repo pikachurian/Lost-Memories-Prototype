@@ -13,5 +13,4 @@ function SetHP(_amount)
 	hp = clamp(hp, 0, hpMax);
 	
 	restoredAmount = (hpMax - hp) / hpMax;
-	show_debug_message(restoredAmount)
 }
