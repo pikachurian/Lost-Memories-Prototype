@@ -10,7 +10,10 @@
         "interactables": {
             "obj_mom_car": {
                 "lines": [
-                    { "text": "That’s my mom’s car.  I haven’t seen the thing in twenty years.  "},
+                    { 
+                        "text": "That’s my mom’s car.  I haven’t seen the thing in twenty years.",
+                        "gain_memory": 25
+                    },
                     { "text": ""}
                 ]
             },

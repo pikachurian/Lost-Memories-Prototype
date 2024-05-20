@@ -56,6 +56,11 @@ function SetMemory(_amount)
 	obj_memory_visual.UpdateVisual(memory);
 }
 
+function GainMemory(_amount)
+{
+	SetMemory(memory + _amount);
+}
+
 //Checks memory against a value.  If successful, run the memory check lines.
 function MemoryCheck(_struct)
 {

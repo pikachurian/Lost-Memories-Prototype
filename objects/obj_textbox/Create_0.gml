@@ -151,6 +151,7 @@ function EndLine()
 {
 	UpdateVariable();
 	UpdateShadow();
+	UpdateMemory();
 	GotoCheck();
 	if(state == TS.closing)
 		return false;
@@ -369,13 +370,18 @@ function UpdateShadow()
 			show_debug_message(_spriteString);
 			if(sprite_index == asset_get_index(_spriteString))
 			{
-				//with(asset_get_index(currentLines[lineIndex].shadow_off))
-				//{
 					isShadow = false;
 					show_debug_message("Shadow");
-				//}
 			}
-			//obj_game_master.SetTrue(currentLines[lineIndex].shadow_off;
 		}
+	}
+}
+
+//Handles gaining/losing memory.
+function UpdateMemory()
+{
+	if(struct_exists(currentLines[lineIndex], "gain_memory"))
+	{
+		obj_game_master.GainMemory(currentLines[lineIndex].gain_memory);
 	}
 }
