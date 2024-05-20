@@ -3,5 +3,7 @@ alpha = lerp(alpha, 0, 0.1);
 if(alpha <= 0.01)
 {
 	obj_game_master.ChangeState(obj_game_master.previousState);
+	if(obj_game_master.previousState == GS.main)
+		obj_game_master.MemoryCheck(obj_game_master.memoryCheckStruct);
 	instance_destroy();
 }

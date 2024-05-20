@@ -14,6 +14,15 @@
                     { "text": ""}
                 ]
             }
+        },
+        "memoryCheck": {
+            "memory_greater_than": 50,
+            "lines": [
+                { 
+                    "text": "This is my old high school!  I better not be late, prom starts soon!",
+                    "set_true": "can_enter_outside_door"
+                }
+            ]
         }
     },
     "rm_bedroom": {

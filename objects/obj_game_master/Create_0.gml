@@ -34,6 +34,9 @@ has_key = false;
 met_voice = false;
 has_fish = false;
 
+//Clock Building Room.
+can_enter_outside_door = false;
+
 //Memory
 memoryMin = 0;
 memoryMax = 1000;
@@ -43,12 +46,37 @@ memory = 100;
 backgroundXScale = 1.15;//1.25;
 backgroundYScale = 1.15;//1.25;
 
+//Passive memory check.
+memoryCheckStruct = noone;
+
 function SetMemory(_amount)
 {
 	memory = _amount
 	memory = clamp(memory, memoryMin, memoryMax);
 	obj_memory_visual.UpdateVisual(memory);
 }
+
+//Checks memory against a value.  If successful, run the memory check lines.
+function MemoryCheck(_struct)
+{
+	if(_struct == noone)
+		return false;
+		
+	var _success = false;
+	if(struct_exists(_struct, "memory_greater_than"))
+	{
+		if(memory > _struct.memory_greater_than)
+			_success = true;
+	}
+	
+	if(_success)
+	{
+		memoryCheckStruct = noone;
+		CreateTextbox(_struct.lines);
+	}
+}
+
+
 
 function ChangeRoom(_roomString)
 {
@@ -130,17 +158,29 @@ function ChangeRoom(_roomString)
 			}
 		}
 	}
+
+	memoryCheckStruct = _roomStruct.memoryCheck;
 	
 	//Create a textbox with lines.
 	if(is_struct(gameData)) && (struct_exists(_roomStruct, "lines"))
 	{
 		CreateTextbox(_roomStruct.lines);
+	}else
+	{
+		MemoryCheck(_roomStruct.memoryCheck);
 	}
 	
 }
 
 function ChangeState(_state)
 {
+	//Last state.
+	switch(state)
+	{
+		case GS.inTextbox:
+			//MemoryCheck(memoryCheckStruct);
+			break;
+	}
 	state = _state;
 }
 
