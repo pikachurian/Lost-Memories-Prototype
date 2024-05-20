@@ -150,6 +150,7 @@ function StartLine()
 function EndLine()
 {
 	UpdateVariable();
+	UpdateShadow();
 	GotoCheck();
 	if(state == TS.closing)
 		return false;
@@ -353,4 +354,28 @@ function UpdateTypewriterEffect()
 			}
 		}
 	}else typeTick += 1;
+}
+
+//Checks and updates the shadow state of instances.
+function UpdateShadow()
+{
+	if(struct_exists(currentLines[lineIndex], "shadow_off"))
+	{
+		//Set an instance's isShadow value to true.
+		with(obj_interactable)
+		{
+			var _spriteString = string_delete(other.currentLines[other.lineIndex].shadow_off, 1, 3);
+			_spriteString = "spr" + _spriteString;
+			show_debug_message(_spriteString);
+			if(sprite_index == asset_get_index(_spriteString))
+			{
+				//with(asset_get_index(currentLines[lineIndex].shadow_off))
+				//{
+					isShadow = false;
+					show_debug_message("Shadow");
+				//}
+			}
+			//obj_game_master.SetTrue(currentLines[lineIndex].shadow_off;
+		}
+	}
 }

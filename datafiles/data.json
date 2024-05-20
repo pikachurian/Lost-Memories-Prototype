@@ -13,6 +13,10 @@
                     { "text": "That’s my mom’s car.  I haven’t seen the thing in twenty years.  "},
                     { "text": ""}
                 ]
+            },
+            "obj_clock_building": {
+                "lines": "noone",
+                "is_shadow": true
             }
         },
         "memoryCheck": {
@@ -20,7 +24,8 @@
             "lines": [
                 { 
                     "text": "This is my old high school!  I better not be late, prom starts soon!",
-                    "set_true": "can_enter_outside_door"
+                    "set_true": "can_enter_outside_door",
+                    "shadow_off": "obj_clock_building"
                 }
             ]
         }

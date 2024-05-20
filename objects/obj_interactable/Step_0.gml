@@ -5,6 +5,9 @@ if(GetInput(INPUT.clicked)) && (obj_game_master.state == GS.main) && (lines != "
 	CreateTextbox(lines);
 }
 
+if(keyboard_check_pressed(vk_space))
+	isShadow = !isShadow;
+
 //Shadow.
 if(isShadow)
 	shadowAlpha = lerp(shadowAlpha, 1, 0.1);

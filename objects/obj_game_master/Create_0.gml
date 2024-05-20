@@ -114,7 +114,7 @@ function ChangeRoom(_roomString)
 			{
 				case 2:
 					show_debug_message("AAAAAAAAAAAAAAAAAA");
-					_inst.LoadStructData(_struct, _interactableNames[_i], _struct.isShadow);
+					_inst.LoadStructData(_struct, _interactableNames[_i], _struct.is_shadow);
 					break;
 				default:
 					show_debug_message("BBBBBBBBBBBBBBBBBBBBBBB");

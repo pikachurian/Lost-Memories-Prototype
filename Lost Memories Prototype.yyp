@@ -45,6 +45,7 @@
   },
   "resources": [
     {"id":{"name":"obj_symbol_guess","path":"objects/obj_symbol_guess/obj_symbol_guess.yy",},},
+    {"id":{"name":"spr_clock_building_instance","path":"sprites/spr_clock_building_instance/spr_clock_building_instance.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
     {"id":{"name":"spr_clock_building_shadow","path":"sprites/spr_clock_building_shadow/spr_clock_building_shadow.yy",},},
     {"id":{"name":"spr_add","path":"sprites/spr_add/spr_add.yy",},},
