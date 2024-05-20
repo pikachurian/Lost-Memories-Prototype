@@ -12,14 +12,13 @@
                 "lines": [
                     { 
                         "text": "That's my mom's car.  I haven't seen the thing in twenty years.",
-                        "gain_memory": 25
                     },
                     {"text": "Can't have a mom's car without a mom."},
                     {"text": "While driving she'd talk to me, but I was too busy reading The Shadow."},
                     {"text": "I... I..."},
                     {
                         "text": "I still have that book.",
-                        "gain_memory": 25,
+                        "gain_memory": ["obj_mom_car", 25],
                         "shadow_off": "obj_mom_car"
                     }
                 ],

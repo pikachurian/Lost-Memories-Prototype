@@ -3,6 +3,9 @@ lines = noone;
 isShadow = false;
 shadowAlpha = 0;
 
+//Has the player gained memory from this instance.
+gainedMemory = false;
+
 function LoadStructData(_struct, _structName, _isShadow = false)
 {
 	ChangeSprite(_structName);

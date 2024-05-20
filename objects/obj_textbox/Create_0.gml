@@ -357,13 +357,28 @@ function UpdateTypewriterEffect()
 	}else typeTick += 1;
 }
 
+//Returns the first instance of the object whose name matches the name string.
+function InstanceGet(_nameString)
+{
+	//var _spriteString = string_delete(currentLines[lineIndex].shadow_off, 1, 3);
+	var _spriteString = string_delete(_nameString, 1, 3);
+	_spriteString = "spr" + _spriteString;
+	with(obj_interactable)
+	{
+		if(sprite_index == asset_get_index(_spriteString))
+			return id;
+	}
+	
+	return noone;
+}
+
 //Checks and updates the shadow state of instances.
 function UpdateShadow()
 {
 	if(struct_exists(currentLines[lineIndex], "shadow_off"))
 	{
 		//Set an instance's isShadow value to true.
-		with(obj_interactable)
+		/*with(obj_interactable)
 		{
 			var _spriteString = string_delete(other.currentLines[other.lineIndex].shadow_off, 1, 3);
 			_spriteString = "spr" + _spriteString;
@@ -373,7 +388,10 @@ function UpdateShadow()
 					isShadow = false;
 					show_debug_message("Shadow");
 			}
-		}
+		}*/
+		var _inst = InstanceGet(currentLines[other.lineIndex].shadow_off);
+		if(_inst != noone)
+			_inst.isShadow = false;
 	}
 }
 
@@ -382,6 +400,16 @@ function UpdateMemory()
 {
 	if(struct_exists(currentLines[lineIndex], "gain_memory"))
 	{
-		obj_game_master.GainMemory(currentLines[lineIndex].gain_memory);
+		var _inst = InstanceGet(currentLines[lineIndex].gain_memory[0]);
+		if(_inst != noone)
+		{
+			if(_inst.gainedMemory)
+				return false;
+				
+			_inst.gainedMemory = true;
+			obj_game_master.GainMemory(currentLines[lineIndex].gain_memory[1]);
+		}
 	}
+	
+	return true;
 }
