@@ -1,9 +1,16 @@
 lines = noone;
 
-function LoadStructData(_struct, _structName)
+isShadow = false;
+shadowAlpha = 0;
+
+function LoadStructData(_struct, _structName, _isShadow = false)
 {
 	ChangeSprite(_structName);
 	lines = _struct.lines;
+	isShadow = _isShadow;
+	shadowAlpha = 0;
+	if(isShadow)
+		shadowAlpha = 1;
 	show_debug_message(_structName + " | " + string(_struct));
 }
 

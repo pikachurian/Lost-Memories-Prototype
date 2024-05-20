@@ -1,9 +1,9 @@
 gameData = noone;//global.gameData;
 
 //Load JSON.
-if(file_exists("mystery.json"))
+if(file_exists("data.json"))
 {
-	var _buffer = buffer_load("mystery.json");
+	var _buffer = buffer_load("data.json");
 	var _string = buffer_read(_buffer, buffer_string);
 	buffer_delete(_buffer);
 	
@@ -21,7 +21,7 @@ enum GS
 	inBattle
 }
 
-state = GS.inBattle;
+state = GS.preSetup;//GS.inBattle;
 previousState = state;
 
 currentRoomString = noone;
@@ -81,7 +81,23 @@ function ChangeRoom(_roomString)
 		for(var _i = 0; _i < array_length(_interactableNames); _i ++)
 		{
 			var _inst = instance_create_layer(0, 0, "Instances", obj_interactable);
-			_inst.LoadStructData(struct_get(_roomStruct.interactables, _interactableNames[_i]), _interactableNames[_i]);
+			var _struct = struct_get(_roomStruct.interactables, _interactableNames[_i])
+			switch(variable_struct_names_count(_struct))
+			{
+				case 2:
+					show_debug_message("AAAAAAAAAAAAAAAAAA");
+					_inst.LoadStructData(_struct, _interactableNames[_i], _struct.isShadow);
+					break;
+				default:
+					show_debug_message("BBBBBBBBBBBBBBBBBBBBBBB");
+					_inst.LoadStructData(_struct, _interactableNames[_i]);
+					break;
+			}
+			//if(variable_struct_names_count(_struct) == 2)
+			//	_inst.LoadStructData(_struct, _interactableNames[_i], _struct.isShadow);
+			//else if ()
+			//	_inst.LoadStructData(_struct, _interactableNames[_i]);
+			//_inst.LoadStructData(struct_get(_roomStruct.interactables, _interactableNames[_i]), _interactableNames[_i]);
 		}
 	}
 	
@@ -116,7 +132,7 @@ function ChangeRoom(_roomString)
 	}
 	
 	//Create a textbox with lines.
-	if(is_struct(gameData)) && 5(struct_exists(_roomStruct, "lines"))
+	if(is_struct(gameData)) && (struct_exists(_roomStruct, "lines"))
 	{
 		CreateTextbox(_roomStruct.lines);
 	}
