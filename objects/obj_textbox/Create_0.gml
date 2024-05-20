@@ -16,7 +16,7 @@ choiceYOffset = 16;
 choiceYPositions = noone;
 
 //Typewriter effect.
-typeTime = 0.1 * game_get_speed(gamespeed_fps);
+typeTime = 0.02 * game_get_speed(gamespeed_fps); //0.1 * game_get_speed(gamespeed_fps);
 typeTick = 0;
 textToDraw = noone;
 textCharactersDrawn = 0;
