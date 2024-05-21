@@ -35,7 +35,10 @@ met_voice = false;
 has_fish = false;
 
 //Clock Building Room.
+read_clock_building_intro = false;
 can_enter_outside_door = false;
+met_friends = false;
+school_revealed = false;
 
 //Memory
 memoryMin = 0;
@@ -64,6 +67,7 @@ function GainMemory(_amount)
 //Checks memory against a value.  If successful, run the memory check lines.
 function MemoryCheck(_struct)
 {
+	
 	if(_struct == noone)
 		return false;
 		
@@ -117,12 +121,15 @@ function ChangeRoom(_roomString)
 			var _struct = struct_get(_roomStruct.interactables, _interactableNames[_i])
 			switch(variable_struct_names_count(_struct))
 			{
+				case 3:
+					//show_debug_message("AAAAAAAAAAAAAAAAAA");
+					_inst.LoadStructData(_struct, _interactableNames[_i], _struct.layer,_struct.is_shadow);
+					break;
 				case 2:
-					show_debug_message("AAAAAAAAAAAAAAAAAA");
-					_inst.LoadStructData(_struct, _interactableNames[_i], _struct.is_shadow);
+					_inst.LoadStructData(_struct, _interactableNames[_i], _struct.layer);
 					break;
 				default:
-					show_debug_message("BBBBBBBBBBBBBBBBBBBBBBB");
+					//show_debug_message("BBBBBBBBBBBBBBBBBBBBBBB");
 					_inst.LoadStructData(_struct, _interactableNames[_i]);
 					break;
 			}
@@ -164,7 +171,12 @@ function ChangeRoom(_roomString)
 		}
 	}
 
-	memoryCheckStruct = _roomStruct.memoryCheck;
+	//Set memory check struct.
+	memoryCheckStruct = noone;
+	if(struct_exists(_roomStruct, "memory_check"))
+		memoryCheckStruct = _roomStruct.memory_check;
+	
+	UpdateFromVariables();
 	
 	//Create a textbox with lines.
 	if(is_struct(gameData)) && (struct_exists(_roomStruct, "lines"))
@@ -172,9 +184,8 @@ function ChangeRoom(_roomString)
 		CreateTextbox(_roomStruct.lines);
 	}else
 	{
-		MemoryCheck(_roomStruct.memoryCheck);
+		//MemoryCheck(_roomStruct.memoryCheck);
 	}
-	
 }
 
 function ChangeState(_state)
@@ -184,6 +195,7 @@ function ChangeState(_state)
 	{
 		case GS.inTextbox:
 			//MemoryCheck(memoryCheckStruct);
+			MemoryCheck(memoryCheckStruct);
 			break;
 	}
 	state = _state;
@@ -207,4 +219,15 @@ function SetTrue(_varString)
 			break;
 	}
 
+}
+
+//Checks the game variables and updates anything that needs it.
+//Updates the game according to the game variables.
+function UpdateFromVariables()
+{
+	//Clock building.
+	if(met_friends) && (InstanceGet("obj_clock_building_friends") != noone)
+		InstanceGet("obj_clock_building_friends").isShadow = false;
+	if(school_revealed) && (InstanceGet("obj_clock_building") != noone)
+		InstanceGet("obj_clock_building").isShadow = false;
 }

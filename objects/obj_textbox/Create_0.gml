@@ -357,21 +357,6 @@ function UpdateTypewriterEffect()
 	}else typeTick += 1;
 }
 
-//Returns the first instance of the object whose name matches the name string.
-function InstanceGet(_nameString)
-{
-	//var _spriteString = string_delete(currentLines[lineIndex].shadow_off, 1, 3);
-	var _spriteString = string_delete(_nameString, 1, 3);
-	_spriteString = "spr" + _spriteString;
-	with(obj_interactable)
-	{
-		if(sprite_index == asset_get_index(_spriteString))
-			return id;
-	}
-	
-	return noone;
-}
-
 //Checks and updates the shadow state of instances.
 function UpdateShadow()
 {
@@ -407,8 +392,9 @@ function UpdateMemory()
 				return false;
 				
 			_inst.gainedMemory = true;
-			obj_game_master.GainMemory(currentLines[lineIndex].gain_memory[1]);
 		}
+		obj_game_master.GainMemory(currentLines[lineIndex].gain_memory[1]);
+			
 	}
 	
 	return true;

@@ -6,7 +6,7 @@ shadowAlpha = 0;
 //Has the player gained memory from this instance.
 gainedMemory = false;
 
-function LoadStructData(_struct, _structName, _isShadow = false)
+function LoadStructData(_struct, _structName, _layer = "Instances", _isShadow = false)
 {
 	ChangeSprite(_structName);
 	lines = _struct.lines;
@@ -14,6 +14,7 @@ function LoadStructData(_struct, _structName, _isShadow = false)
 	shadowAlpha = 0;
 	if(isShadow)
 		shadowAlpha = 1;
+	layer = layer_get_id(_layer);
 	show_debug_message(_structName + " | " + string(_struct));
 }
 

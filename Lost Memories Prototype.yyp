@@ -34,6 +34,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Clock Building","folderPath":"folders/Sprites/Rooms/Clock Building.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shadow","folderPath":"folders/Sprites/Rooms/Clock Building/Shadow.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Meet Friends","folderPath":"folders/Sprites/Rooms/Meet Friends.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"data.json","CopyToMask":-1,"filePath":"datafiles",},
@@ -60,6 +61,7 @@
     {"id":{"name":"spr_clock_building_friends","path":"sprites/spr_clock_building_friends/spr_clock_building_friends.yy",},},
     {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
     {"id":{"name":"spr_clock_building","path":"sprites/spr_clock_building/spr_clock_building.yy",},},
+    {"id":{"name":"spr_meet_friends_old","path":"sprites/spr_meet_friends_old/spr_meet_friends_old.yy",},},
     {"id":{"name":"obj_memory_visual","path":"objects/obj_memory_visual/obj_memory_visual.yy",},},
     {"id":{"name":"spr_moment_beta","path":"sprites/spr_moment_beta/spr_moment_beta.yy",},},
     {"id":{"name":"Global","path":"scripts/Global/Global.yy",},},
@@ -71,6 +73,7 @@
     {"id":{"name":"obj_textbox_closing","path":"objects/obj_textbox_closing/obj_textbox_closing.yy",},},
     {"id":{"name":"obj_symbol","path":"objects/obj_symbol/obj_symbol.yy",},},
     {"id":{"name":"spr_subtract","path":"sprites/spr_subtract/spr_subtract.yy",},},
+    {"id":{"name":"spr_meet_friends","path":"sprites/spr_meet_friends/spr_meet_friends.yy",},},
     {"id":{"name":"spr_make_guess","path":"sprites/spr_make_guess/spr_make_guess.yy",},},
     {"id":{"name":"obj_result_text","path":"objects/obj_result_text/obj_result_text.yy",},},
     {"id":{"name":"spr_hidden4","path":"sprites/spr_hidden4/spr_hidden4.yy",},},

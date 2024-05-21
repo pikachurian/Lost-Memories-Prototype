@@ -27,6 +27,22 @@ function ClearListOfInstances(_list)
 	}
 }
 	
+//Returns the first instance of the object whose name matches the name string.
+function InstanceGet(_nameString)
+{
+	//var _spriteString = string_delete(currentLines[lineIndex].shadow_off, 1, 3);
+	var _spriteString = string_delete(_nameString, 1, 3);
+	_spriteString = "spr" + _spriteString;
+	with(obj_interactable)
+	{
+		if(sprite_index == asset_get_index(_spriteString))
+			return id;
+	}
+	
+	return noone;
+}
+
+	
 /*This code was for testing the game before I added JSON loading.
 global.gameData = {
     rm_in_bed : {

@@ -3,15 +3,46 @@
         "dev_notes": "A silhouette of a building with a clock.’",
         "free_move": true,
         "lines": [
-            { "text": "Where am I?" },
-            { "text": "The building over there, that clock."},
-            { "text": "It gives me the feeling of impending doom."}
+            {
+                "if_false": "read_clock_building_intro",
+                "lines": [
+                    { "text": "Where am I?" },
+                    { "text": "The building over there, that clock."},
+                    { 
+                        "text": "It gives me the feeling of impending doom.",
+                        "set_true": "read_clock_building_intro"
+                    }
+                ]
+            }
         ],
         "interactables": {
+            "obj_clock_building": {
+                "lines": "noone",
+                "is_shadow": true,
+                "layer": "InstancesBackground"
+            },
+
+            "obj_clock_building_friends": {
+                "lines": [
+                    {
+                        "if_false": "met_friends",
+                        "lines": [
+                            {"text": "There's a group of people here all around my age."},
+                            {
+                                "text": "One of them is waving me over.",
+                                "goto": "rm_meet_friends"
+                            }
+                        ]
+                    }
+                ],
+                "layer": "Instances",
+                "is_shadow": true
+            },
+
             "obj_mom_car": {
                 "lines": [
                     { 
-                        "text": "That's my mom's car.  I haven't seen the thing in twenty years.",
+                        "text": "That's my mom's car.  I haven't seen the thing in twenty years."
                     },
                     {"text": "Can't have a mom's car without a mom."},
                     {"text": "While driving she'd talk to me, but I was too busy reading The Shadow."},
@@ -22,27 +53,70 @@
                         "shadow_off": "obj_mom_car"
                     }
                 ],
-                "is_shadow": true
-            },
-            "obj_clock_building": {
-                "lines": "noone",
+                "layer": "Instances",
                 "is_shadow": true
             }
         },
-        "memoryCheck": {
+        "memory_check": {
             "memory_greater_than": 100,
             "lines": [
                 {
-                    "text": "This is my old high school!",
-                    "shadow_off": "obj_clock_building"
-                },
-                { 
-                    "text": "I better not be late, prom starts soon!",
-                    "set_true": "can_enter_outside_door"
+                    "if_false": "school_revealed",
+                    "lines": [
+                        {
+                            "text": "This is my old high school!",
+                            "shadow_off": "obj_clock_building",
+                            "set_true": "school_revealed"
+                        },
+                        { 
+                            "text": "I better not be late, prom starts soon!",
+                            "set_true": "can_enter_outside_door"
+                        }
+                    ]
                 }
+
             ]
         }
     },
+
+    "rm_meet_friends": {
+        "free_move": false,
+        "lines": [
+            {
+                "speaker": "Smiling Dude",
+                "text": "Hey look who's here!"
+            },
+            {
+                "speaker": "Group",
+                "text": "\"Hi.\" \"Hello.\" \"You made it!\""
+            },
+            {
+                "speaker": "Smiling Dude",
+                "text": "Did you ask her out?"
+            },
+            {"text": "My mouth speaks by itself."},
+            {"text": "\"Well, uh, I didn't.\""},
+            {"text": "\"We've been friends for years, so I thought I didn't need to.\""},
+            {
+                "speaker": "Smiling Dude",
+                "text": "Woah, that's risky."
+            },
+            {"text": "\"So, how about you guys?\""},
+            {
+                "speaker": "Smiling Dude",
+                "text": "Call us Noah's Ark, because each of us has a dance partner and I bet you will to."
+            },
+            {"text": "That group..."},
+            {
+                "text": "I think I remember them.",
+                "gain_memory": ["", 25],
+                "set_true": "met_friends",
+                "goto": "rm_clock_building"
+
+            }
+        ]
+    },
+
     "rm_bedroom": {
         "dev_notes": "Looking at a bedroom, containing all the interactables",
         "free_move": true,

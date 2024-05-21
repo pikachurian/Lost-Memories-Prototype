@@ -23,6 +23,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
     {"name":"Clock Building","order":2,"path":"folders/Sprites/Rooms/Clock Building.yy",},
     {"name":"Shadow","order":2,"path":"folders/Sprites/Rooms/Clock Building/Shadow.yy",},
+    {"name":"Meet Friends","order":3,"path":"folders/Sprites/Rooms/Meet Friends.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_symbol_guess","order":2,"path":"objects/obj_symbol_guess/obj_symbol_guess.yy",},
@@ -38,6 +39,7 @@
     {"name":"spr_remember","order":1,"path":"sprites/spr_remember/spr_remember.yy",},
     {"name":"spr_clock_building_friends","order":6,"path":"sprites/spr_clock_building_friends/spr_clock_building_friends.yy",},
     {"name":"spr_clock_building","order":3,"path":"sprites/spr_clock_building/spr_clock_building.yy",},
+    {"name":"spr_meet_friends_old","order":1,"path":"sprites/spr_meet_friends_old/spr_meet_friends_old.yy",},
     {"name":"obj_memory_visual","order":11,"path":"objects/obj_memory_visual/obj_memory_visual.yy",},
     {"name":"obj_interactable","order":4,"path":"objects/obj_interactable/obj_interactable.yy",},
     {"name":"spr_heart_tree_shadow","order":3,"path":"sprites/spr_heart_tree_shadow/spr_heart_tree_shadow.yy",},
