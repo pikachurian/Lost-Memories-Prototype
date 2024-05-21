@@ -71,6 +71,7 @@
     {"id":{"name":"spr_symbols","path":"sprites/spr_symbols/spr_symbols.yy",},},
     {"id":{"name":"spr_heart_tree_shadow","path":"sprites/spr_heart_tree_shadow/spr_heart_tree_shadow.yy",},},
     {"id":{"name":"spr_hidden","path":"sprites/spr_hidden/spr_hidden.yy",},},
+    {"id":{"name":"spr_battle","path":"sprites/spr_battle/spr_battle.yy",},},
     {"id":{"name":"spr_prom_girlfriend","path":"sprites/spr_prom_girlfriend/spr_prom_girlfriend.yy",},},
     {"id":{"name":"obj_game_master","path":"objects/obj_game_master/obj_game_master.yy",},},
     {"id":{"name":"obj_textbox_closing","path":"objects/obj_textbox_closing/obj_textbox_closing.yy",},},

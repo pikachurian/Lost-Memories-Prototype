@@ -192,6 +192,14 @@ function ChangeRoom(_roomString)
 	}
 }
 
+function Encounter(_encounter)
+{
+	ChangeRoom("rm_battle");
+	ChangeState(GS.inBattle);
+	var _battleInst = instance_create_depth(0, 0, depth, obj_battle_manager);
+	_battleInst.LoadEnemyStruct(_encounter);
+}
+
 function ChangeState(_state)
 {
 	//Last state.

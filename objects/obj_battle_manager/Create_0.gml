@@ -4,7 +4,9 @@ enemy = {
 	momentSprite : spr_moment_beta,
 	momentShadowSprite : spr_moment_shadow_beta,
 	x : room_width * 0.5,
-	y : room_width * 0.15
+	y : room_width * 0.15,
+	moveOnRoom : "rm_test_room",
+	rememberRoom : "rm_test_room"
 }
 
 sequence = array_create(enemy.sequenceLength);
@@ -122,6 +124,19 @@ resultTextY = room_height * 0.5;
 //to get correct to win a turn.
 guessPercentToWin = 0.6;
 
+function LoadEnemyStruct(_struct)
+{
+	enemy.hp = _struct.hp;
+	enemy.sequenceLength = _struct.sequenceLength;
+	enemy.momentSprite = asset_get_index(_struct.momentSprite);
+	enemy.momentShadowSprite = asset_get_index(_struct.momentShadowSprite);
+	enemy.x = _struct.x;
+	enemy.y = _struct.y;
+	enemy.moveOnRoom = _struct.moveOnRoom;//asset_get_index(_struct.moveOnRoom);
+	enemy.rememberRoom = _struct.rememberRoom;//asset_get_index(_struct.rememberRoom);
+	moveOnRoom = enemy.moveOnRoom;
+	rememberRoom = enemy.rememberRoom;
+}
 
 function ChangeState(_state)
 {

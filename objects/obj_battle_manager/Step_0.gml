@@ -1,7 +1,7 @@
 switch(state)
 {
 	case BS.setup: 
-		enemyInst = instance_create_depth(enemy.x, enemy.y, depth, obj_battle_enemy);
+		enemyInst = instance_create_depth(enemy.x, enemy.y, depth + 25, obj_battle_enemy);
 		enemyInst.momentSprite = enemy.momentSprite;
 		enemyInst.momentShadowSprite = enemy.momentShadowSprite;
 		enemyInst.hpMax = enemy.hp;
@@ -145,6 +145,7 @@ switch(state)
 			break;
 			
 		case BS.leaveBattle:
+			//show_debug_message("Next room " + string(nextRoom));
 			obj_game_master.ChangeRoom(nextRoom);
 			instance_destroy(enemyInst);
 			instance_destroy();

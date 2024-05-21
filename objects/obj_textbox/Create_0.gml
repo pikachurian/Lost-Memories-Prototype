@@ -153,6 +153,7 @@ function EndLine()
 	UpdateShadow();
 	UpdateMemory();
 	GotoCheck();
+	EncounterCheck();
 	if(state == TS.closing)
 		return false;
 	return true;
@@ -315,6 +316,17 @@ function GotoCheck()
 		obj_game_master.ChangeRoom(_goto);
 	}
 	
+}
+
+//If an encounter statement is found.  Start that encounter and close this textbox.
+function EncounterCheck()
+{
+	if(struct_exists(currentLines[lineIndex], "encounter"))
+	{
+		var _encounter = currentLines[lineIndex].encounter;
+		Close();
+		obj_game_master.Encounter(_encounter);
+	}
 }
 
 //If the end of a lines array is reached remove that array from dsLines and go to the

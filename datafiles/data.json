@@ -1,4 +1,7 @@
 {
+    "rm_battle": {
+        "dev_notes": "This is a blank room for the encounters in the game."
+    },
     "rm_clock_building": {
         "dev_notes": "A silhouette of a building with a clock.’",
         "free_move": true,
@@ -188,7 +191,19 @@
             {"text": "Something about this encounter terrifies me."},
             {"text": "Is this fear..."},
             {"text": "or..."},
-            {"text": "love."}
+            {
+                "text": "love.",
+                "encounter": {
+                    "hp" : 4,
+                    "sequenceLength" : 3,
+                    "momentSprite" : "spr_moment_beta",
+                    "momentShadowSprite" : "spr_moment_shadow_beta",
+                    "x" : 160,
+                    "y" : 90,
+                    "moveOnRoom" : "rm_prom",
+                    "rememberRoom" : "rm_meet_girlfriend_moment"
+                }
+            }
         ]
     },
 
