@@ -162,12 +162,34 @@
         "interactables": {
             "obj_prom_girlfriend": {
                 "lines": [
-                    {"text": "goto next room"}
+                    {"goto": "rm_meet_girlfriend_moment"}
                 ],
                 "layer": "Instances",
                 "is_shadow": false
             }
         }
+    },
+
+    "rm_meet_girlfriend_moment": {
+        "free_move": false,
+        "lines": [
+            {
+                "speaker": "The Girl",
+                "text": "Hi."
+            },
+            {
+                "speaker": "The Girl",
+                "text": "Do I know you?"
+            },
+            {"text": "I walk closer..."},
+            {"text": "but slower..."},
+            {"text": "with each..."},
+            {"text": "step."},
+            {"text": "Something about this encounter terrifies me."},
+            {"text": "Is this fear..."},
+            {"text": "or..."},
+            {"text": "love."}
+        ]
     },
 
     "rm_bedroom": {
