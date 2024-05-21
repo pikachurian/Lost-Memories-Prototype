@@ -163,7 +163,9 @@
             "obj_prom_girlfriend": {
                 "lines": [
                     {"text": "goto next room"}
-                ]
+                ],
+                "layer": "Instances",
+                "is_shadow": false
             }
         }
     },
