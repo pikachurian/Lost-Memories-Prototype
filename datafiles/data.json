@@ -50,13 +50,45 @@
                     {
                         "text": "I still have that book.",
                         "gain_memory": ["obj_mom_car", 25],
-                        "shadow_off": "obj_mom_car"
+                        "shadow_off": "obj_mom_car",
+                        "set_false": "mom_car_is_shadow"
+                    }
+                ],
+                "layer": "Instances",
+                "is_shadow": true
+            },
+
+            "obj_heart_tree": {
+                "lines": [
+                    {"text": "There's an engraving here."},
+                    {"text": "It's a heart, with my name and..."},
+                    {"text": "and..."},
+                    {"text": "..."},
+                    {"text": "I don't recognize the second name."},
+                    {
+                        "text": "I think someone with the same name as me wrote this.",
+                        "gain_memory": ["obj_heart_tree", 25],
+                        "shadow_off": "obj_heart_tree"
+                    }
+                ],
+                "layer": "Instances",
+                "is_shadow": true
+            },
+
+            "obj_school_door": {
+                "lines": [
+                    {
+                        "if_true": "can_enter_outside_door",
+                        "lines": [
+                            {"goto": "rm_prom"}
+                        ]
                     }
                 ],
                 "layer": "Instances",
                 "is_shadow": true
             }
         },
+
         "memory_check": {
             "memory_greater_than": 100,
             "lines": [
@@ -70,6 +102,7 @@
                         },
                         { 
                             "text": "I better not be late, prom starts soon!",
+                            "shadow_off": "obj_school_door",
                             "set_true": "can_enter_outside_door"
                         }
                     ]
@@ -115,6 +148,24 @@
 
             }
         ]
+    },
+
+    "rm_prom": {
+        "dev_notes": "A dark room with people, colorful streamers, lights, and silver paper stars.",
+        "free_move": true,
+        "lines": [
+            {"text": "Am I really here?"},
+            {"text": "..."},
+            {"text": "I think I'm supposed to meet someone."},
+            {"text": "It's hard to see with the dim lights."}
+        ],
+        "interactables": {
+            "obj_prom_girlfriend": {
+                "lines": [
+                    {"text": "goto next room"}
+                ]
+            }
+        }
     },
 
     "rm_bedroom": {

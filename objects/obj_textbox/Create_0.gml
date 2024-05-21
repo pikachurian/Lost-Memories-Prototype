@@ -377,6 +377,11 @@ function UpdateShadow()
 		var _inst = InstanceGet(currentLines[other.lineIndex].shadow_off);
 		if(_inst != noone)
 			_inst.isShadow = false;
+			
+		var _variableName = currentLines[other.lineIndex].shadow_off;
+		_variableName = string_delete(_variableName, 1, 4) + "_is_shadow";
+		obj_game_master.SetFalse(_variableName);
+		show_debug_message(_variableName);
 	}
 }
 

@@ -25,6 +25,10 @@ switch(state)
 			x = lerp(x, mouse_x * -0.1, 0.5);
 			y = lerp(y, mouse_y * -0.1, 0.5);
 		}
+		
+		break;
+		
+	case GS.inTextbox:
 
 		break;
 }
@@ -35,3 +39,5 @@ if(keyboard_check_pressed(vk_alt))
 //Toggle fullscreen.
 if(keyboard_check_pressed(vk_f4))
 	window_set_fullscreen(!window_get_fullscreen());
+	
+//show_debug_message("state " + string(state));

@@ -40,6 +40,10 @@ can_enter_outside_door = false;
 met_friends = false;
 school_revealed = false;
 
+heart_tree_is_shadow = true;
+mom_car_is_shadow = true;
+school_door_is_shadow = true;
+
 //Memory
 memoryMin = 0;
 memoryMax = 1000;
@@ -195,17 +199,32 @@ function ChangeState(_state)
 	{
 		case GS.inTextbox:
 			//MemoryCheck(memoryCheckStruct);
+			//MemoryCheck(memoryCheckStruct);
+			break;
+	}
+	
+	state = _state;
+	
+	//Next state.
+	switch(_state)
+	{
+		case GS.main:
 			MemoryCheck(memoryCheckStruct);
 			break;
 	}
-	state = _state;
+}
+
+//Set a variable to true or false.
+function SetBool(_varString, _bool)
+{
+	variable_instance_set(id, _varString, _bool);
+	show_debug_message(_varString + " set to " + string(variable_instance_get(id, _varString)));
 }
 
 //Set a variable to true.
 function SetTrue(_varString)
 {
-	variable_instance_set(id, _varString, true);
-	show_debug_message(_varString + " set to " + string(variable_instance_get(id, _varString)));
+	SetBool(_varString, true);
 	
 	switch(_varString)
 	{
@@ -218,7 +237,12 @@ function SetTrue(_varString)
 			//audio_play_sound(sfx_item_get, 15, false);
 			break;
 	}
+}
 
+//Set a variable to false.
+function SetFalse(_varString)
+{
+	SetBool(_varString, false);
 }
 
 //Checks the game variables and updates anything that needs it.
@@ -228,6 +252,16 @@ function UpdateFromVariables()
 	//Clock building.
 	if(met_friends) && (InstanceGet("obj_clock_building_friends") != noone)
 		InstanceGet("obj_clock_building_friends").isShadow = false;
+		
 	if(school_revealed) && (InstanceGet("obj_clock_building") != noone)
 		InstanceGet("obj_clock_building").isShadow = false;
+		
+	if(InstanceGet("obj_school_door") != noone)
+		InstanceGet("obj_school_door").isShadow = school_door_is_shadow;
+		
+	if(InstanceGet("obj_mom_car") != noone)
+		InstanceGet("obj_mom_car").isShadow = mom_car_is_shadow;
+		
+	if(InstanceGet("obj_heart_tree") != noone)
+		InstanceGet("obj_heart_tree").isShadow = heart_tree_is_shadow;
 }
