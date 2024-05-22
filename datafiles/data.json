@@ -211,11 +211,15 @@
         "background_sprite": "spr_meet_girlfriend_moment",
         "lines": [
             {"text": "\"I don't believe you know me.\""},
-            {"text": "\"I'm sorry for taking your time.\""}
+            {
+                "text": "\"I'm sorry for taking your time.\"",
+                "goto": "rm_return_to_friends"
+            }
         ]
     },
 
     "rm_girlfriend_remember": {
+        "free_move": false,
         "lines": [
             {"text": "I step into the kaleidoscopic light of the dance hall."},
             {"text": "\"It's me.  We've been friends since the seventh grade.\""},
@@ -233,7 +237,56 @@
                 "text": "I already have a dance..."
             },
             {"text": "\"Oh.\""},
-            {"text": "I turn around and leave, wishing things could have been different as technicolor lights whirr over my head."}
+            {
+                "text": "I turn around and leave, wishing things could have been different as technicolor lights whirr over my head.",
+                "goto": "rm_return_to_friends"
+            }
+        ]
+    },
+
+    "rm_return_to_friends": {
+        "free_move": false,
+        "lines": [
+            {
+                "speaker": "Smiling Dude",
+                "text": "Hey!"
+            },
+            {
+                "speaker": "Smiling Dude",
+                "text": "How are you enjoying the dance so far?"
+            },
+            {"text": "\"I couldn't get a dance.\""},
+            {"text": "\"I wish I could forget this day.\""},
+            {
+                "speaker": "Smiling Dude",
+                "text": "Sorry to hear that."
+            },
+            {
+                "speaker": "Smiling Dude",
+                "text": "You know what?  Me and my friends are tired."
+            },
+            {
+                "speaker": "Friends",
+                "text": "\"Yes.\" \"Yawn.\" \"Wake me up for pizza.\""
+            },
+            {
+                "speaker": "Smiling Dude",
+                "text": "Dancing is slower and less fun than it seems."
+            },
+            {
+                "speaker": "Smiling Dude",
+                "text": "We were just about to head to Denny's.  Care to join us for a bite?"
+            },
+            {
+                "choices": [
+                    {
+                        "text": "That sounds great."
+                    },
+                    {
+                        "text": "I just want to rest."
+                    }
+                ]
+            }
         ]
     },
 
