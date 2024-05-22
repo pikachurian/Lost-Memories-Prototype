@@ -199,7 +199,7 @@
                     "momentSprite" : "spr_moment_girlfriend",
                     "momentShadowSprite" : "spr_moment_girlfriend_shadow",
                     "x" : 160,
-                    "y" : 70,
+                    "y" : 55,
                     "moveOnRoom" : "rm_prom",
                     "rememberRoom" : "rm_meet_girlfriend_moment"
                 }
