@@ -122,6 +122,16 @@ function ChangeRoom(_roomString)
 
 	obj_background.sprite_index = asset_get_index(_backgroundString);
 	
+	//Background animation.
+	obj_background.image_index = 0;
+	obj_background.image_speed = 1;
+	obj_background.playOnce = false;
+	if(struct_exists(_roomStruct, "play_once"))
+	{
+		obj_background.playOnce = _roomStruct.play_once;
+		show_debug_message("AAAAAAAABABABABAB");
+	}
+	
 	//Create interactables.
 	if(is_struct(gameData)) && (struct_exists(_roomStruct, "interactables"))
 	{

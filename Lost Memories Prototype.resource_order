@@ -61,6 +61,7 @@
     {"name":"spr_heart_tree_shadow","order":3,"path":"sprites/spr_heart_tree_shadow/spr_heart_tree_shadow.yy",},
     {"name":"spr_hidden","order":1,"path":"sprites/spr_hidden/spr_hidden.yy",},
     {"name":"spr_battle","order":5,"path":"sprites/spr_battle/spr_battle.yy",},
+    {"name":"spr_good_ending","order":10,"path":"sprites/spr_good_ending/spr_good_ending.yy",},
     {"name":"spr_prom54","order":3,"path":"sprites/spr_prom54/spr_prom54.yy",},
     {"name":"spr_moment_girlfriend_shadow_old","order":4,"path":"sprites/spr_moment_girlfriend_shadow_old/spr_moment_girlfriend_shadow_old.yy",},
     {"name":"spr_prom_girlfriend","order":2,"path":"sprites/spr_prom_girlfriend/spr_prom_girlfriend.yy",},

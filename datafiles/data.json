@@ -317,7 +317,8 @@
     },
 
     "rm_good_ending": {
-        "free_move": false
+        "free_move": false,
+        "play_once": true
     },
 
     "rm_dennies": {

@@ -88,6 +88,7 @@
     {"id":{"name":"spr_heart_tree_shadow","path":"sprites/spr_heart_tree_shadow/spr_heart_tree_shadow.yy",},},
     {"id":{"name":"spr_hidden","path":"sprites/spr_hidden/spr_hidden.yy",},},
     {"id":{"name":"spr_battle","path":"sprites/spr_battle/spr_battle.yy",},},
+    {"id":{"name":"spr_good_ending","path":"sprites/spr_good_ending/spr_good_ending.yy",},},
     {"id":{"name":"spr_prom54","path":"sprites/spr_prom54/spr_prom54.yy",},},
     {"id":{"name":"spr_moment_girlfriend_shadow_old","path":"sprites/spr_moment_girlfriend_shadow_old/spr_moment_girlfriend_shadow_old.yy",},},
     {"id":{"name":"spr_prom_girlfriend","path":"sprites/spr_prom_girlfriend/spr_prom_girlfriend.yy",},},
