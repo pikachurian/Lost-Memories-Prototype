@@ -124,7 +124,7 @@
             },
             {
                 "speaker": "Group",
-                "text": "\"Hi.\" \"Hello.\" \"You made it!\""
+                "text": "\"Hi.\"  \"Hello.\"  \"You made it!\""
             },
             {
                 "speaker": "Smiling Dude",
@@ -267,7 +267,7 @@
             },
             {
                 "speaker": "Friends",
-                "text": "\"Yes.\" \"Yawn.\" \"Wake me up for pizza.\""
+                "text": "\"Yes.\"  \"Yawn.\"  \"Wake me up for pizza.\""
             },
             {
                 "speaker": "Smiling Dude",
@@ -275,15 +275,17 @@
             },
             {
                 "speaker": "Smiling Dude",
-                "text": "We were just about to head to Denny's.  Care to join us for a bite?"
+                "text": "We were just about to head to Dennies.  Care to join us for a bite?"
             },
             {
                 "choices": [
                     {
-                        "text": "That sounds great."
+                        "text": "That sounds great.",
+                        "goto": "rm_dennies"
                     },
                     {
-                        "text": "I just want to rest."
+                        "text": "I just want to rest.",
+                        "goto": "rm_back_to_mom_car"
                     }
                 ]
             }
@@ -305,6 +307,78 @@
     },
 
     "rm_good_ending": {
+        "free_move": false
+    },
+
+    "rm_dennies": {
+        "free_move": false,
+        "lines": [
+            {"text": "Where are we?"},
+            {
+                "text": "Where are you guys taking me!?",
+                "encounter": {
+                    "hp" : 3,
+                    "sequenceLength" : 9,
+                    "momentSprite" : "spr_moment_girlfriend",
+                    "momentShadowSprite" : "spr_moment_girlfriend_shadow",
+                    "x" : 160,
+                    "y" : 55,
+                    "moveOnRoom" : "rm_dennies_move_on",
+                    "rememberRoom" : "rm_dennies_remember"
+                }
+            }
+        ]
+    },
+
+    "rm_dennies_remember": {
+        "free_move": false,
+        "lines": [
+            {"text": "I remember eating here, The food, and my friends."},
+            {
+                "text": "Those were the best times of my life.",
+                "goto": "rm_remembrance_ending"
+            }
+        ]
+    },
+
+    "rm_remembrance_ending": {
+        "free_move": false
+    },
+
+    "rm_dennies_move_on": {
+        "free_move": false,
+        "lines": [
+            {"text": "\"Did I eat here?\""},
+            {
+                "speaker": "Smiling Dude",
+                "text": "Did you eat here!?  Anymore eating and they would have to restock the fridge."
+            },
+            {"text": "\"I...\""},
+            {"text": "\"don't remember.\""},
+            {"text": "\"In fact, there isn't much I do remember.\""},
+            {
+                "speaker": "Smiling Dude",
+                "text": "That's okay, we'll help you remember."
+            },
+            {
+                "speaker": "Friends",
+                "text": "\"Totally.\"  \"Let's go!\"  \"Alright.\"",
+                "goto": "rm_move_on_together"
+            }
+        ]
+    },
+
+    "rm_move_on_together": {
+        "free_move": false,
+        "lines":  [
+            {
+                "text": "And so, my friends and I moved on, together, to recover my memories.",
+                "goto": "rm_moved_on_together_ending"
+            }
+        ]
+    },
+
+    "rm_moved_on_together_ending": {
         "free_move": false
     },
 
