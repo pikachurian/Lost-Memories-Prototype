@@ -1,9 +1,9 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_success",
-  "bbox_bottom": 60,
-  "bbox_left": 4,
+  "name": "spr_failure",
+  "bbox_bottom": 63,
+  "bbox_left": 0,
   "bbox_right": 63,
   "bbox_top": 0,
   "bboxMode": 0,
@@ -23,7 +23,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"bf7bba04-0f3b-41dc-848b-d14d8bea800f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 9,
+  "origin": 4,
   "parent": {
     "name": "Battle",
     "path": "folders/Sprites/Battle.yy",
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_success",
+    "name": "spr_failure",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,12 +54,12 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fe9464ef-e7a1-480e-bd06-a66fa26d2037","path":"sprites/spr_success/spr_success.yy",},},},"Disabled":false,"id":"b2a20625-88df-4b9d-9393-8d79eb7e3ca2","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fe9464ef-e7a1-480e-bd06-a66fa26d2037","path":"sprites/spr_failure/spr_failure.yy",},},},"Disabled":false,"id":"1003df27-d3f5-41ca-a2db-c49807c98210","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 47,
+    "xorigin": 32,
     "yorigin": 32,
   },
   "swatchColours": null,

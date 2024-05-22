@@ -9,19 +9,20 @@ failureTexts = [
 	"I'm a bit foggy on the details."
 ];
 
-resultText = "test.";
-textColor = c_green;
-
-scale = 1.5;
-
-image_alpha = 2;
-
 //Result type.
 enum RT
 {
 	success,
 	failure
 }
+
+resultText = "test.";
+textColor = c_green;
+result = RT.success;
+
+scale = 1.5;
+
+image_alpha = 2;
 
 function SetText(resultEnum)
 {
@@ -31,10 +32,12 @@ function SetText(resultEnum)
 		case RT.success: 
 			_textArray = successTexts; 
 			textColor = c_green;
+			result = RT.success;
 			break;
 		case RT.failure: 
 			_textArray = failureTexts; 
 			textColor = c_red;
+			result = RT.failure;
 			break;
 	}
 	

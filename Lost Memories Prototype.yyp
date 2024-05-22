@@ -74,6 +74,7 @@
     {"id":{"name":"spr_moment_girlfriend_shadow_64","path":"sprites/spr_moment_girlfriend_shadow_64/spr_moment_girlfriend_shadow_64.yy",},},
     {"id":{"name":"spr_moment_girlfriend_shadow42","path":"sprites/spr_moment_girlfriend_shadow42/spr_moment_girlfriend_shadow42.yy",},},
     {"id":{"name":"obj_interactable","path":"objects/obj_interactable/obj_interactable.yy",},},
+    {"id":{"name":"spr_failure","path":"sprites/spr_failure/spr_failure.yy",},},
     {"id":{"name":"spr_symbols","path":"sprites/spr_symbols/spr_symbols.yy",},},
     {"id":{"name":"spr_heart_tree_shadow","path":"sprites/spr_heart_tree_shadow/spr_heart_tree_shadow.yy",},},
     {"id":{"name":"spr_hidden","path":"sprites/spr_hidden/spr_hidden.yy",},},

@@ -49,6 +49,7 @@
     {"name":"spr_moment_girlfriend_shadow_64","order":6,"path":"sprites/spr_moment_girlfriend_shadow_64/spr_moment_girlfriend_shadow_64.yy",},
     {"name":"spr_moment_girlfriend_shadow42","order":7,"path":"sprites/spr_moment_girlfriend_shadow42/spr_moment_girlfriend_shadow42.yy",},
     {"name":"obj_interactable","order":4,"path":"objects/obj_interactable/obj_interactable.yy",},
+    {"name":"spr_failure","order":7,"path":"sprites/spr_failure/spr_failure.yy",},
     {"name":"spr_heart_tree_shadow","order":3,"path":"sprites/spr_heart_tree_shadow/spr_heart_tree_shadow.yy",},
     {"name":"spr_hidden","order":1,"path":"sprites/spr_hidden/spr_hidden.yy",},
     {"name":"spr_battle","order":5,"path":"sprites/spr_battle/spr_battle.yy",},
