@@ -26,6 +26,7 @@
     {"name":"Symbols","order":1,"path":"folders/Sprites/Symbols.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Girlfriend Remember","order":7,"path":"folders/Sprites/Rooms/Girlfriend Remember.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_symbol_guess","order":2,"path":"objects/obj_symbol_guess/obj_symbol_guess.yy",},
@@ -43,6 +44,7 @@
     {"name":"spr_remember","order":1,"path":"sprites/spr_remember/spr_remember.yy",},
     {"name":"spr_moment_girlfriend_64","order":11,"path":"sprites/spr_moment_girlfriend_64/spr_moment_girlfriend_64.yy",},
     {"name":"spr_clock_building_friends","order":6,"path":"sprites/spr_clock_building_friends/spr_clock_building_friends.yy",},
+    {"name":"spr_girlfriend_remember","order":1,"path":"sprites/spr_girlfriend_remember/spr_girlfriend_remember.yy",},
     {"name":"spr_clock_building","order":3,"path":"sprites/spr_clock_building/spr_clock_building.yy",},
     {"name":"spr_meet_friends_old","order":1,"path":"sprites/spr_meet_friends_old/spr_meet_friends_old.yy",},
     {"name":"obj_memory_visual","order":11,"path":"objects/obj_memory_visual/obj_memory_visual.yy",},
@@ -71,6 +73,7 @@
     {"name":"obj_inventory","order":5,"path":"objects/obj_inventory/obj_inventory.yy",},
     {"name":"spr_moment_girlfriend40","order":5,"path":"sprites/spr_moment_girlfriend40/spr_moment_girlfriend40.yy",},
     {"name":"obj_fade","order":1,"path":"objects/obj_fade/obj_fade.yy",},
+    {"name":"spr_girlfriend_remember52","order":2,"path":"sprites/spr_girlfriend_remember52/spr_girlfriend_remember52.yy",},
     {"name":"obj_battle_enemy","order":3,"path":"objects/obj_battle_enemy/obj_battle_enemy.yy",},
     {"name":"spr_confirm","order":5,"path":"sprites/spr_confirm/spr_confirm.yy",},
     {"name":"spr_mom_car","order":4,"path":"sprites/spr_mom_car/spr_mom_car.yy",},

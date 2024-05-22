@@ -38,6 +38,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Symbols","folderPath":"folders/Sprites/Symbols.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Girlfriend Remember","folderPath":"folders/Sprites/Rooms/Girlfriend Remember.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"data.json","CopyToMask":-1,"filePath":"datafiles",},
@@ -50,6 +51,7 @@
   "resources": [
     {"id":{"name":"obj_symbol_guess","path":"objects/obj_symbol_guess/obj_symbol_guess.yy",},},
     {"id":{"name":"spr_clock_building_instance","path":"sprites/spr_clock_building_instance/spr_clock_building_instance.yy",},},
+    {"id":{"name":"spr_girlfriend_remeber","path":"sprites/spr_girlfriend_remeber/spr_girlfriend_remeber.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
     {"id":{"name":"spr_clock_building_shadow","path":"sprites/spr_clock_building_shadow/spr_clock_building_shadow.yy",},},
     {"id":{"name":"spr_success","path":"sprites/spr_success/spr_success.yy",},},
@@ -65,6 +67,7 @@
     {"id":{"name":"spr_remember","path":"sprites/spr_remember/spr_remember.yy",},},
     {"id":{"name":"spr_moment_girlfriend_64","path":"sprites/spr_moment_girlfriend_64/spr_moment_girlfriend_64.yy",},},
     {"id":{"name":"spr_clock_building_friends","path":"sprites/spr_clock_building_friends/spr_clock_building_friends.yy",},},
+    {"id":{"name":"spr_girlfriend_remember","path":"sprites/spr_girlfriend_remember/spr_girlfriend_remember.yy",},},
     {"id":{"name":"obj_background","path":"objects/obj_background/obj_background.yy",},},
     {"id":{"name":"spr_clock_building","path":"sprites/spr_clock_building/spr_clock_building.yy",},},
     {"id":{"name":"spr_meet_friends_old","path":"sprites/spr_meet_friends_old/spr_meet_friends_old.yy",},},
@@ -101,6 +104,7 @@
     {"id":{"name":"spr_test_room","path":"sprites/spr_test_room/spr_test_room.yy",},},
     {"id":{"name":"spr_moment_girlfriend40","path":"sprites/spr_moment_girlfriend40/spr_moment_girlfriend40.yy",},},
     {"id":{"name":"obj_fade","path":"objects/obj_fade/obj_fade.yy",},},
+    {"id":{"name":"spr_girlfriend_remember52","path":"sprites/spr_girlfriend_remember52/spr_girlfriend_remember52.yy",},},
     {"id":{"name":"obj_battle_enemy","path":"objects/obj_battle_enemy/obj_battle_enemy.yy",},},
     {"id":{"name":"spr_confirm","path":"sprites/spr_confirm/spr_confirm.yy",},},
     {"id":{"name":"spr_test","path":"sprites/spr_test/spr_test.yy",},},
