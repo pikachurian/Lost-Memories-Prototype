@@ -194,18 +194,50 @@
             {
                 "text": "love.",
                 "encounter": {
-                    "hp" : 5,
+                    "hp" : 4,
                     "sequenceLength" : 5,
                     "momentSprite" : "spr_moment_girlfriend",
                     "momentShadowSprite" : "spr_moment_girlfriend_shadow",
                     "x" : 160,
                     "y" : 55,
-                    "moveOnRoom" : "rm_prom",
-                    "rememberRoom" : "rm_meet_girlfriend_moment"
+                    "moveOnRoom" : "rm_girlfriend_move_on",
+                    "rememberRoom" : "rm_girlfriend_remember"
                 }
             }
         ]
     },
+
+    "rm_girlfriend_move_on": {
+        "background_sprite": "spr_meet_girlfriend_moment",
+        "lines": [
+            {"text": "\"I don't believe you know me.\""},
+            {"text": "\"I'm sorry for taking your time.\""}
+        ]
+    },
+
+    "rm_girlfriend_remember": {
+        "lines": [
+            {"text": "I step into the kaleidoscopic light of the dance hall."},
+            {"text": "\"It's me.  We've been friends since the seventh grade.\""},
+            {"text": "\"Would you like to dance with me?  If you're free that is.\""},
+            {
+                "speaker": "The Girl",
+                "text": "I'm so sorry, I didn't think you would come."
+            },
+            {
+                "speaker": "The Girl",
+                "text": "..."
+            },
+            {
+                "speaker": "The Girl",
+                "text": "I already have a dance..."
+            },
+            {"text": "\"Oh.\""},
+            {"text": "I turn around and leave, wishing things could have been different as technicolor lights whirr over my head."}
+        ]
+    },
+
+    "dev_notes": "What follows is text from the original clone.",
 
     "rm_bedroom": {
         "dev_notes": "Looking at a bedroom, containing all the interactables",

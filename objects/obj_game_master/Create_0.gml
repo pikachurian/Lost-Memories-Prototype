@@ -112,6 +112,11 @@ function ChangeRoom(_roomString)
 	var _backgroundSprite = spr_test;
 	var _backgroundString = string_delete(_roomString, 1, 2);
 	_backgroundString = "spr" + _backgroundString;
+	//show_debug_message(_roomStruct);
+	if(struct_exists(_roomStruct, "background_sprite"))
+	{
+		_backgroundString = _roomStruct.background_sprite;
+	}
 
 	obj_background.sprite_index = asset_get_index(_backgroundString);
 	
