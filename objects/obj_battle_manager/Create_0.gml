@@ -204,17 +204,18 @@ function ChangeState(_state)
 			break;
 			
 		case BS.chooseMemoryToSpend:
-			addButton = instance_create_depth(addButtonX, addButtonY, depth, obj_button);
+			guesses = guessMin;
+			addButton = instance_create_depth(addButtonX, addButtonY, depth - 100, obj_button);
 			addButton.sprite_index = addButtonSprite;
 			
-			subtractButton = instance_create_depth(subtractButtonX, subtractButtonY, depth, obj_button);
+			subtractButton = instance_create_depth(subtractButtonX, subtractButtonY, depth - 100, obj_button);
 			subtractButton.sprite_index = subtractButtonSprite;
 			subtractButton.image_alpha = cannotSelectAlpha;
 			
-			toMainButton = instance_create_depth(toMainButtonX, toMainButtonY, depth, obj_button);
+			toMainButton = instance_create_depth(toMainButtonX, toMainButtonY, depth - 100, obj_button);
 			toMainButton.sprite_index = toMainButtonSprite;
 			
-			confirmCostButton = instance_create_depth(confirmCostButtonX, confirmCostButtonY, depth, obj_button);
+			confirmCostButton = instance_create_depth(confirmCostButtonX, confirmCostButtonY, depth - 100, obj_button);
 			confirmCostButton.sprite_index = confirmCostButtonSprite;
 			break;
 		
@@ -235,7 +236,7 @@ function ChangeState(_state)
 		case BS.guess:
 			HideSequence();	
 			SpawnGuesses();
-			makeGuessButton = instance_create_depth(makeGuessButtonX, makeGuessButtonY, depth, obj_button);
+			makeGuessButton = instance_create_depth(makeGuessButtonX, makeGuessButtonY, depth - 100, obj_button);
 			makeGuessButton.sprite_index = spr_make_guess;
 			break;
 			
@@ -282,7 +283,7 @@ function SpawnSequence()
 		
 	for(var _i = 0; _i < array_length(sequence); _i ++)
 	{
-		var _inst = instance_create_depth(sequenceX + (_i * sequenceHOffset), sequenceY, depth, obj_symbol);
+		var _inst = instance_create_depth(sequenceX + (_i * sequenceHOffset), sequenceY, depth - 100, obj_symbol);
 		//_inst.image_index = sequence[_i];
 		_inst.SetSymbolIndex(sequence[_i]);
 		ds_list_add(sequenceList, _inst);
@@ -325,7 +326,7 @@ function SpawnGuesses()
 	
 	for(var _i = 0; _i < array_length(sequence); _i ++)
 	{
-		var _inst = instance_create_depth(guessX + (guessHOffset * _i), guessY, depth, obj_symbol_guess);
+		var _inst = instance_create_depth(guessX + (guessHOffset * _i), guessY, depth - 100, obj_symbol_guess);
 		ds_list_add(guessList, _inst);
 	}
 }

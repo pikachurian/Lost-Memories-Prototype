@@ -323,6 +323,7 @@
 
     "rm_dennies": {
         "free_move": false,
+        "background_sprite": "spr_dennies_shadow",
         "lines": [
             {"text": "Where are we?"},
             {
@@ -334,10 +335,10 @@
                 "encounter": {
                     "hp" : 3,
                     "sequenceLength" : 9,
-                    "momentSprite" : "spr_moment_girlfriend",
-                    "momentShadowSprite" : "spr_moment_girlfriend_shadow",
+                    "momentSprite" : "spr_moment_dennies",
+                    "momentShadowSprite" : "spr_moment_dennies_shadow",
                     "x" : 160,
-                    "y" : 55,
+                    "y" : 90,
                     "moveOnRoom" : "rm_dennies_move_on",
                     "rememberRoom" : "rm_dennies_remember"
                 }

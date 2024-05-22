@@ -129,7 +129,6 @@ function ChangeRoom(_roomString)
 	if(struct_exists(_roomStruct, "play_once"))
 	{
 		obj_background.playOnce = _roomStruct.play_once;
-		show_debug_message("AAAAAAAABABABABAB");
 	}
 	
 	//Create interactables.
