@@ -52,6 +52,7 @@
     {"id":{"name":"spr_clock_building_instance","path":"sprites/spr_clock_building_instance/spr_clock_building_instance.yy",},},
     {"id":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},},
     {"id":{"name":"spr_clock_building_shadow","path":"sprites/spr_clock_building_shadow/spr_clock_building_shadow.yy",},},
+    {"id":{"name":"spr_success","path":"sprites/spr_success/spr_success.yy",},},
     {"id":{"name":"spr_add","path":"sprites/spr_add/spr_add.yy",},},
     {"id":{"name":"spr_heart_tree","path":"sprites/spr_heart_tree/spr_heart_tree.yy",},},
     {"id":{"name":"spr_mom_car_shadow","path":"sprites/spr_mom_car_shadow/spr_mom_car_shadow.yy",},},

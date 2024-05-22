@@ -1,1 +1,1 @@
-alpha = lerp(alpha, 0, 0.05);
+alpha = lerp(alpha, lerpTarget, lerpAmount);

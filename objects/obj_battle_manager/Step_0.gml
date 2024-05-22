@@ -136,13 +136,14 @@ switch(state)
 			break;
 			
 		case BS.moveOn:
-			nextRoom = moveOnRoom;
-			ChangeState(BS.leaveBattle);
-			break;
-			
 		case BS.remember:
-			nextRoom = rememberRoom;
-			ChangeState(BS.leaveBattle);
+			show_debug_message("Fade Alpha " + string(obj_fade.alpha));
+			if(obj_fade.alpha >= closeFadeTarget)
+			{
+				show_debug_message("Among Us");
+				//with(obj_fade)instance_destroy();
+				ChangeState(BS.leaveBattle);
+			}
 			break;
 			
 		case BS.leaveBattle:

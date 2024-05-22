@@ -124,6 +124,12 @@ resultTextY = room_height * 0.5;
 //to get correct to win a turn.
 guessPercentToWin = 0.6;
 
+//How long it takes for the encounter to fade out.
+//battleCloseTime = 1 * game_get_speed(gamespeed_fps);
+//battleCloseTick = 0;
+closeFadeAmount = 0.03;//0.005;
+closeFadeTarget = 0.99;//0.005;
+
 function LoadEnemyStruct(_struct)
 {
 	enemy.hp = _struct.hp;
@@ -231,6 +237,23 @@ function ChangeState(_state)
 			SpawnGuesses();
 			makeGuessButton = instance_create_depth(makeGuessButtonX, makeGuessButtonY, depth, obj_button);
 			makeGuessButton.sprite_index = spr_make_guess;
+			break;
+			
+		case BS.remember:
+			nextRoom = rememberRoom;
+			//var _fade = instance_create_depth(0, 0, depth, obj_fade);
+			obj_fade.lerpAmount = closeFadeAmount;
+			obj_fade.lerpTarget = 1;
+			obj_fade.alpha = 0;
+			//obj_battle_enemy.depth = _fade.depth - 50;
+			break;
+			
+		case BS.moveOn:
+			nextRoom = moveOnRoom;
+			//var _fade = instance_create_depth(0, 0, depth, obj_fade);
+			obj_fade.lerpAmount = closeFadeAmount;
+			obj_fade.lerpTarget = 1;
+			obj_fade.alpha = 0;
 			break;
 	}
 	

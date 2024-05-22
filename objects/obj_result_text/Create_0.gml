@@ -10,6 +10,7 @@ failureTexts = [
 ];
 
 resultText = "test.";
+textColor = c_green;
 
 scale = 1.5;
 
@@ -27,8 +28,14 @@ function SetText(resultEnum)
 	var _textArray = successTexts;
 	switch(resultEnum)
 	{
-		case RT.success: _textArray = successTexts; break;
-		case RT.failure: _textArray = failureTexts; break;
+		case RT.success: 
+			_textArray = successTexts; 
+			textColor = c_green;
+			break;
+		case RT.failure: 
+			_textArray = failureTexts; 
+			textColor = c_red;
+			break;
 	}
 	
 	resultText = _textArray[irandom(array_length(_textArray) - 1)];
