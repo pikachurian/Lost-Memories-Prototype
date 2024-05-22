@@ -290,6 +290,24 @@
         ]
     },
 
+    "rm_back_to_mom_car": {
+        "free_move": false,
+        "lines": [
+            {"text": "The walk back to mom's car seemed to take forever."},
+            {"text": "When I got there, I picked up my copy of The Shadow and buried my face in it."},
+            {"text": "My mom asked me how the evening went"},
+            {"text": "I said..."},
+            {
+                "text": "\"Good.\"",
+                "goto": "rm_good_ending"
+            }
+        ]
+    },
+
+    "rm_good_ending": {
+        "free_move": false
+    },
+
     "dev_notes": "What follows is text from the original clone.",
 
     "rm_bedroom": {
