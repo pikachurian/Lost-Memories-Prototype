@@ -1,8 +1,8 @@
-draw_sprite(momentShadowSprite, 0, x, y);
+draw_sprite(momentShadowSprite, image_index, x, y);
 
 draw_sprite_part(
 	momentSprite,
-	0,
+	image_index,
 	0,
 	0,
 	sprite_get_width(momentSprite),

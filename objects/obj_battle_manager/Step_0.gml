@@ -4,6 +4,7 @@ switch(state)
 		enemyInst = instance_create_depth(enemy.x, enemy.y, depth + 25, obj_battle_enemy);
 		enemyInst.momentSprite = enemy.momentSprite;
 		enemyInst.momentShadowSprite = enemy.momentShadowSprite;
+		enemyInst.sprite_index = enemy.momentSprite;
 		enemyInst.hpMax = enemy.hp;
 		enemyInst.hp = enemy.hp;
 		//ChangeState(BS.showSequence);
