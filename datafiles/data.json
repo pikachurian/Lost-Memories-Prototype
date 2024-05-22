@@ -281,11 +281,21 @@
                 "choices": [
                     {
                         "text": "That sounds great.",
-                        "goto": "rm_dennies"
+                        "lines": [
+                            {
+                                "text": "That sounds great.  I am kind of hungry.",
+                                "goto": "rm_dennies"
+                            }
+                        ]
                     },
                     {
                         "text": "I just want to rest.",
-                        "goto": "rm_back_to_mom_car"
+                        "lines": [
+                            {
+                                "text": "I just want to rest.  I'll be going home now.",
+                                "goto": "rm_back_to_mom_car"
+                            }
+                        ]
                     }
                 ]
             }
@@ -314,6 +324,10 @@
         "free_move": false,
         "lines": [
             {"text": "Where are we?"},
+            {
+                "speaker": "Smiling Dude",
+                "text": "Dennies, remember?"
+            },
             {
                 "text": "Where are you guys taking me!?",
                 "encounter": {
