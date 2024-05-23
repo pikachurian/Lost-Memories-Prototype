@@ -154,6 +154,21 @@ switch(state)
 			break;
 			
 		case BS.moveOnConfirm:
+			//Activate tutorial.
+			if(obj_game_master.showMoveOnExplanation)
+			{
+				toMainButton.depth = depth + 10;
+				confirmCostButton.depth = depth + 10;
+				if(GetInput(INPUT.mousePressed))
+				{
+					//End tutorial.
+					obj_game_master.showMoveOnExplanation = false;
+					toMainButton.depth = -100;
+					confirmCostButton.depth = -100;
+				}
+				break;
+			}
+		
 			if(GetInput(INPUT.clicked, confirmCostButton))
 			{
 				ChangeState(BS.moveOn);
