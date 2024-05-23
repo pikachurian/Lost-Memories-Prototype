@@ -348,8 +348,20 @@
 
     "rm_dennies_remember": {
         "free_move": false,
+        "background_sprite": "spr_dennies_pork_and_beans",
         "lines": [
-            {"text": "I remember eating here, The food, and my friends."},
+            {"text": "I remember eating here."},
+            {
+                "text": "I remember the food and my friends.",
+                "goto": "rm_dennies_remember_2"
+            }
+        ]
+    },
+
+    "rm_dennies_remember_2": {
+        "free_move": false,
+        "background_sprite": "spr_stand_by_me",
+        "lines": [
             {
                 "text": "Those were the best times of my life.",
                 "goto": "rm_remembrance_ending"
@@ -358,11 +370,13 @@
     },
 
     "rm_remembrance_ending": {
-        "free_move": false
+        "free_move": false,
+        "play_once": true
     },
 
     "rm_dennies_move_on": {
         "free_move": false,
+        "background_sprite": "spr_dennies_pork_and_beans",
         "lines": [
             {"text": "\"Did I eat here?\""},
             {
@@ -386,6 +400,7 @@
 
     "rm_move_on_together": {
         "free_move": false,
+        "background_sprite": "spr_stand_by_me",
         "lines":  [
             {
                 "text": "And so, my friends and I moved on, together, to recover my memories.",
@@ -395,7 +410,8 @@
     },
 
     "rm_moved_on_together_ending": {
-        "free_move": false
+        "free_move": false,
+        "play_once": true
     },
 
     "dev_notes": "What follows is text from the original clone.",

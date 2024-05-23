@@ -8,7 +8,7 @@ switch(state)
 	case GS.setup:
 		//Load first room.
 		var _rooms = struct_get_names(gameData);
-		ChangeRoom("rm_dennies");//("rm_return_to_friends");//("rm_prom");//("rm_clock_building");//ChangeRoom("rm_in_bed");
+		ChangeRoom("rm_clock_building");//("rm_dennies");//("rm_return_to_friends");//("rm_prom");//("rm_clock_building");//ChangeRoom("rm_in_bed");
 		//audio_play_sound(sng_background, 10, true);
 		break;
 		
