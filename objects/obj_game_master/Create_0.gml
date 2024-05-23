@@ -44,6 +44,10 @@ heart_tree_is_shadow = true;
 mom_car_is_shadow = true;
 school_door_is_shadow = true;
 
+//Tutorial variables.
+showRememberExplanation = true;
+showMoveOnExplanation = true;
+
 //Memory
 memoryMin = 0;
 memoryMax = 1000;

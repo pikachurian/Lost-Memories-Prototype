@@ -30,8 +30,10 @@ enum BS
 	checkGuess,
 	restoreMoment,
 	chooseMemoryToSpend,
+	rememberExplanation,
 	moveOn,
 	moveOnConfirm,
+	moveOnExplanation,
 	remember,
 	leaveBattle
 }

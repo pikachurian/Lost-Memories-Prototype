@@ -27,7 +27,25 @@ switch(state)
 		break;
 		
 	case BS.chooseMemoryToSpend:
-	
+		//Activate tutorial.
+		if(obj_game_master.showRememberExplanation)
+		{
+			toMainButton.depth = depth + 10;
+			confirmCostButton.depth = depth + 10;
+			addButton.depth = depth + 10;
+			subtractButton.depth = depth + 10;
+			if(GetInput(INPUT.mousePressed))
+			{
+				//End tutorial.
+				obj_game_master.showRememberExplanation = false;
+				toMainButton.depth = -100;
+				confirmCostButton.depth = -100;
+				addButton.depth = -100;
+				subtractButton.depth = -100;
+			}
+			break;
+		}
+		
 		if(GetInput(INPUT.clicked, toMainButton))
 		{
 			//Return to the action select menu.
