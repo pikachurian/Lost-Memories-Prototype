@@ -31,6 +31,7 @@ enum BS
 	restoreMoment,
 	chooseMemoryToSpend,
 	moveOn,
+	moveOnConfirm,
 	remember,
 	leaveBattle
 }
@@ -187,6 +188,14 @@ function ChangeState(_state)
 			ClearListOfInstances(sequenceList);
 			ClearListOfInstances(guessList);
 			break;
+			
+		case BS.moveOnConfirm:		
+			if(confirmCostButton != noone)
+				instance_destroy(confirmCostButton);
+				
+			if(toMainButton != noone)
+				instance_destroy(toMainButton);
+			break;
 	}
 	
 	//Actions for entering a state.
@@ -249,6 +258,14 @@ function ChangeState(_state)
 			//obj_battle_enemy.depth = _fade.depth - 50;
 			break;
 			
+		case BS.moveOnConfirm:
+			toMainButton = instance_create_depth(toMainButtonX, toMainButtonY, depth - 100, obj_button);
+			toMainButton.sprite_index = toMainButtonSprite;
+			
+			confirmCostButton = instance_create_depth(confirmCostButtonX, confirmCostButtonY, depth - 100, obj_button);
+			confirmCostButton.sprite_index = confirmCostButtonSprite;	
+			break;
+		
 		case BS.moveOn:
 			nextRoom = moveOnRoom;
 			//var _fade = instance_create_depth(0, 0, depth, obj_fade);

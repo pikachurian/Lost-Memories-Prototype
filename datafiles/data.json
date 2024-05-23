@@ -93,7 +93,7 @@
         },
 
         "memory_check": {
-            "memory_greater_than": 100,
+            "memory_greater_than": 125,
             "lines": [
                 {
                     "if_false": "school_revealed",

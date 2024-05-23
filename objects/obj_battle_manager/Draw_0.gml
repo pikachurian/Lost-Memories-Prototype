@@ -15,6 +15,18 @@ switch(state)
 		draw_text(room_width * 0.5, room_height * 0.5, _secondsText + "\n" + _memoryCostText);
 		break;
 		
+	case BS.moveOnConfirm:		
+		draw_set_halign(fa_center);
+		draw_set_color(c_black);
+		draw_set_alpha(0.5);
+		draw_rectangle(0, 0, room_width, room_height, false);
+		draw_set_alpha(1);
+		var _text = "Once you move on, you cannot return \nto the past.  Are you sure?";
+		draw_text(room_width * 0.5 + 1, room_height * 0.5 + 1, _text);
+		draw_set_color(c_white);
+		draw_text(room_width * 0.5, room_height * 0.5, _text);
+		break;
+		
 	case BS.checkGuess:
 	case BS.showSequence:
 	case BS.guess:

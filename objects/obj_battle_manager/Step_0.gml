@@ -22,7 +22,7 @@ switch(state)
 		//Choose to move on.
 		if(GetInput(INPUT.clicked, moveOnButton))
 		{
-			ChangeState(BS.moveOn);
+			ChangeState(BS.moveOnConfirm);
 		}
 		break;
 		
@@ -133,6 +133,16 @@ switch(state)
 				ChangeState(BS.remember);
 			else
 				ChangeState(BS.chooseAction);
+			break;
+			
+		case BS.moveOnConfirm:
+			if(GetInput(INPUT.clicked, confirmCostButton))
+			{
+				ChangeState(BS.moveOn);
+			}else if(GetInput(INPUT.clicked, toMainButton))
+			{
+				ChangeState(BS.chooseAction);
+			}
 			break;
 			
 		case BS.moveOn:
