@@ -72,6 +72,8 @@
     {"id":{"name":"spr_school_door_shadow","path":"sprites/spr_school_door_shadow/spr_school_door_shadow.yy",},},
     {"id":{"name":"fnt_pixel","path":"fonts/fnt_pixel/fnt_pixel.yy",},},
     {"id":{"name":"spr_remember","path":"sprites/spr_remember/spr_remember.yy",},},
+    {"id":{"name":"sng_forever","path":"sounds/sng_forever/sng_forever.yy",},},
+    {"id":{"name":"sng_hot_dog","path":"sounds/sng_hot_dog/sng_hot_dog.yy",},},
     {"id":{"name":"spr_stand_by_me75","path":"sprites/spr_stand_by_me75/spr_stand_by_me75.yy",},},
     {"id":{"name":"spr_moment_girlfriend_64","path":"sprites/spr_moment_girlfriend_64/spr_moment_girlfriend_64.yy",},},
     {"id":{"name":"spr_clock_building_friends","path":"sprites/spr_clock_building_friends/spr_clock_building_friends.yy",},},

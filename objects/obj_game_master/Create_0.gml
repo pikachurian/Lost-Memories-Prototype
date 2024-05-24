@@ -114,6 +114,13 @@ function ChangeRoom(_roomString)
 	
 	ChangeState(GS.main);
 	
+	//Music.
+	if(struct_exists(_roomStruct, "stop_music"))
+	{
+		if(_roomStruct.stop_music)
+			audio_stop_all();
+	}
+	
 	//Change background sprite.
 	var _backgroundSprite = spr_test;
 	var _backgroundString = string_delete(_roomString, 1, 2);
@@ -218,6 +225,7 @@ function Encounter(_encounter)
 	ChangeState(GS.inBattle);
 	var _battleInst = instance_create_depth(0, 0, depth, obj_battle_manager);
 	_battleInst.LoadEnemyStruct(_encounter);
+	_battleInst.Setup();
 }
 
 function ChangeState(_state)

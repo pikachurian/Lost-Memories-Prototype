@@ -10,6 +10,7 @@ switch(state)
 		var _rooms = struct_get_names(gameData);
 		ChangeRoom("rm_meet_girlfriend_moment");//("rm_dennies");//("rm_return_to_friends");//("rm_prom");//("rm_clock_building");//ChangeRoom("rm_in_bed");
 		//audio_play_sound(sng_background, 10, true);
+		obj_memory_visual.memory = memory;
 		break;
 		
 	case GS.main:

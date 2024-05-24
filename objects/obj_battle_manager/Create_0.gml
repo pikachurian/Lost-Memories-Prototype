@@ -6,7 +6,8 @@ enemy = {
 	x : room_width * 0.5,
 	y : room_width * 0.15,
 	moveOnRoom : "rm_test_room",
-	rememberRoom : "rm_test_room"
+	rememberRoom : "rm_test_room",
+	music : sng_forever
 }
 
 sequence = array_create(enemy.sequenceLength);
@@ -125,11 +126,14 @@ resultTextY = room_height * 0.5;
 //to get correct to win a turn.
 guessPercentToWin = 0.6;
 
-//How long it takes for the encounter to fade out.
-//battleCloseTime = 1 * game_get_speed(gamespeed_fps);
-//battleCloseTick = 0;
+//Encounter fade out.
 closeFadeAmount = 0.03;//0.005;
 closeFadeTarget = 0.99;//0.005;
+
+//Music.
+music = noone;
+musicInstance = noone;
+
 
 function LoadEnemyStruct(_struct)
 {
@@ -143,6 +147,16 @@ function LoadEnemyStruct(_struct)
 	enemy.rememberRoom = _struct.rememberRoom;//asset_get_index(_struct.rememberRoom);
 	moveOnRoom = enemy.moveOnRoom;
 	rememberRoom = enemy.rememberRoom;
+	enemy.music = asset_get_index(_struct.music);
+	music = enemy.music;
+}
+
+function Setup()
+{
+	if(music != noone)
+	{
+		musicInstance = audio_play_sound(music, 10, true, 1, 1, 0.2);
+	}
 }
 
 function ChangeState(_state)

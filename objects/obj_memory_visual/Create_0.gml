@@ -8,6 +8,6 @@ finishedSetup = false;
 //Update this visual and trigger any effects for losing/gaining memory.
 function UpdateVisual(_memoryAmount)
 {
-	scale = 1.25;
+	scale = 1.5;//1.25;
 	memory = _memoryAmount;
 }

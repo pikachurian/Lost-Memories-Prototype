@@ -49,6 +49,7 @@
     {"name":"spr_moment_shadow_beta","order":1,"path":"sprites/spr_moment_shadow_beta/spr_moment_shadow_beta.yy",},
     {"name":"spr_school_door_shadow","order":2,"path":"sprites/spr_school_door_shadow/spr_school_door_shadow.yy",},
     {"name":"spr_remember","order":1,"path":"sprites/spr_remember/spr_remember.yy",},
+    {"name":"sng_hot_dog","order":6,"path":"sounds/sng_hot_dog/sng_hot_dog.yy",},
     {"name":"spr_stand_by_me75","order":13,"path":"sprites/spr_stand_by_me75/spr_stand_by_me75.yy",},
     {"name":"spr_moment_girlfriend_64","order":11,"path":"sprites/spr_moment_girlfriend_64/spr_moment_girlfriend_64.yy",},
     {"name":"spr_clock_building_friends","order":6,"path":"sprites/spr_clock_building_friends/spr_clock_building_friends.yy",},

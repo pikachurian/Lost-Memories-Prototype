@@ -201,7 +201,8 @@
                     "x" : 160,
                     "y" : 55,
                     "moveOnRoom" : "rm_girlfriend_move_on",
-                    "rememberRoom" : "rm_girlfriend_remember"
+                    "rememberRoom" : "rm_girlfriend_remember",
+                    "music" : "sng_forever"
                 }
             }
         ]
@@ -245,6 +246,7 @@
     },
 
     "rm_return_to_friends": {
+        "stop_music": true,
         "free_move": false,
         "lines": [
             {
@@ -340,13 +342,15 @@
                     "x" : 160,
                     "y" : 90,
                     "moveOnRoom" : "rm_dennies_move_on",
-                    "rememberRoom" : "rm_dennies_remember"
+                    "rememberRoom" : "rm_dennies_remember",
+                    "music" : "sng_hot_dog"
                 }
             }
         ]
     },
 
     "rm_dennies_remember": {
+        "stop_music": true,
         "free_move": false,
         "background_sprite": "spr_dennies_pork_and_beans",
         "lines": [
@@ -375,6 +379,7 @@
     },
 
     "rm_dennies_move_on": {
+        "stop_music": true,
         "free_move": false,
         "background_sprite": "spr_dennies_pork_and_beans",
         "lines": [

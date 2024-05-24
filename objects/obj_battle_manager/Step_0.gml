@@ -146,6 +146,7 @@ switch(state)
 		
 		case BS.restoreMoment:
 			enemyInst.SetHP(enemyInst.hp - 1);
+			audio_sound_pitch(musicInstance, enemyInst.restoredAmount);
 			
 			if(enemyInst.hp <= 0)
 				ChangeState(BS.remember);
