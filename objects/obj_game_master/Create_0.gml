@@ -60,6 +60,12 @@ backgroundYScale = 1.15;//1.25;
 //Passive memory check.
 memoryCheckStruct = noone;
 
+//Title alpha.
+titleAlpha = 1;
+titleGhostAlpha = 1;
+
+tick = 0;
+
 function SetMemory(_amount)
 {
 	memory = _amount

@@ -1,14 +1,20 @@
 switch(state)
 {
 	case GS.preSetup:
+		obj_memory_visual.image_alpha = 0;
+		titleAlpha = sin((tick + 120) * 0.01);
+		titleGhostAlpha = sin((tick + 60) * 0.01);
 		if(GetInput(INPUT.mousePressed))
+		{
+			obj_memory_visual.image_alpha = 1;
 			ChangeState(GS.setup);
+		}
 		break;
 		
 	case GS.setup:
 		//Load first room.
 		var _rooms = struct_get_names(gameData);
-		ChangeRoom("rm_meet_girlfriend_moment");//("rm_dennies");//("rm_return_to_friends");//("rm_prom");//("rm_clock_building");//ChangeRoom("rm_in_bed");
+		ChangeRoom("rm_clock_building");//("rm_dennies");//("rm_return_to_friends");//("rm_prom");//("rm_clock_building");//ChangeRoom("rm_in_bed");
 		//audio_play_sound(sng_background, 10, true);
 		obj_memory_visual.memory = memory;
 		break;
@@ -40,5 +46,7 @@ if(keyboard_check_pressed(vk_alt))
 //Toggle fullscreen.
 if(keyboard_check_pressed(vk_f4))
 	window_set_fullscreen(!window_get_fullscreen());
+	
+tick ++;
 	
 //show_debug_message("state " + string(state));
