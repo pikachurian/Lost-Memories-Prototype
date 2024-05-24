@@ -282,19 +282,19 @@
             {
                 "choices": [
                     {
-                        "text": "That sounds great.",
+                        "text": "\"That sounds great.\"",
                         "lines": [
                             {
-                                "text": "That sounds great.  I am kind of hungry.",
+                                "text": "\"That sounds great.  I am kind of hungry.\"",
                                 "goto": "rm_dennies"
                             }
                         ]
                     },
                     {
-                        "text": "I just want to rest.",
+                        "text": "\"I just want to rest.\"",
                         "lines": [
                             {
-                                "text": "I just want to rest.  I'll be going home now.",
+                                "text": "\"I just want to rest.  I'll be going home now.\"",
                                 "goto": "rm_back_to_mom_car"
                             }
                         ]
@@ -327,13 +327,13 @@
         "free_move": false,
         "background_sprite": "spr_dennies_shadow",
         "lines": [
-            {"text": "Where are we?"},
+            {"text": "\"Where are we?\""},
             {
                 "speaker": "Smiling Dude",
                 "text": "Dennies, remember?"
             },
             {
-                "text": "Where are you guys taking me!?",
+                "text": "\"Where are you guys taking me!?\"",
                 "encounter": {
                     "hp" : 3,
                     "sequenceLength" : 9,
